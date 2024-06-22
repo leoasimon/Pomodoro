@@ -15,6 +15,7 @@
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
 		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
 		B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */; };
+		B3A790642C276C6100E7E257 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A790632C276C6100E7E257 /* Colors.swift */; };
 		B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */; };
 		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
 /* End PBXBuildFile section */
@@ -29,6 +30,7 @@
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewController.swift; sourceTree = "<group>"; };
+		B3A790632C276C6100E7E257 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CycleCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
@@ -48,6 +50,7 @@
 		B341BD842C1C7E4900BB3B6D = {
 			isa = PBXGroup;
 			children = (
+				B3A790632C276C6100E7E257 /* Colors.swift */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
 			);
@@ -154,6 +157,7 @@
 				B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */,
 				B3B30ED02C247AED0011056A /* Cycle.swift in Sources */,
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
+				B3A790642C276C6100E7E257 /* Colors.swift in Sources */,
 				B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,

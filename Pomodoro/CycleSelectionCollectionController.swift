@@ -11,10 +11,9 @@ class CycleSelectionCollectionController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let cycles: [Cycle] = [
-        Cycle(name: "Classic Pomodoro"),
-        Cycle(name: "DeskTime 2014"),
-        Cycle(name: "In The Zone"),
-        Cycle(name: "My own flavour")
+        Cycle(name: "Classic Pomodoro", colors: CycleColors(work: 0xFF6347, pause: 0xFF9F43)),
+        Cycle(name: "DeskTime 2014", colors: CycleColors(work: 0x1DD1A1, pause: 0xFF6E4E)),
+        Cycle(name: "In The Zone", colors: CycleColors(work: 0x5F27CD, pause: 0xCD7727))
     ]
     
     override func viewDidLoad() {
@@ -30,9 +29,9 @@ class CycleSelectionCollectionController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-//        let layout = UICollectionViewFlowLayout()
-//        layout.itemSize = CGSize(width: 120, height: 120)
-//        collectionView.collectionViewLayout =  layout
+        //        let layout = UICollectionViewFlowLayout()
+        //        layout.itemSize = CGSize(width: 120, height: 120)
+        //        collectionView.collectionViewLayout =  layout
         
         title = "Select your cycle"
         navigationController?.navigationBar.prefersLargeTitles = true
@@ -43,7 +42,10 @@ extension CycleSelectionCollectionController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
-        print("You tapped me")
+        //        print("You tapped me")
+        
+        guard let vc = storyboard?.instantiateViewController(withIdentifier: "TimerView") else { return }
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -55,7 +57,7 @@ extension CycleSelectionCollectionController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CycleCardCollectionViewCell.identifier, for: indexPath) as! CycleCardCollectionViewCell
         
-        cell.configure(with: cycles[indexPath.row])
+        cell.configure(with: cycles[indexPath.row], selectionActionDelegate: self)
         
         return cell
     }
@@ -68,9 +70,21 @@ extension CycleSelectionCollectionController: UICollectionViewDelegateFlowLayout
         
         return CGSize(width: availableWidth - (padding * 2.0), height: 213)
     }
+}
+
+protocol CycleSelectionAction {
+    func openCycleInfos(cycle: Cycle)
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print("Hello")
+    func openCycleTimer(cycle: Cycle)
+}
+
+extension CycleSelectionCollectionController: CycleSelectionAction {
+    func openCycleInfos(cycle: Cycle) {
+        print("Should open cycle info for \(cycle.name)")
+    }
+    
+    func openCycleTimer(cycle: Cycle) {
+        print("Should open timer for \(cycle.name)")
     }
 }
 
