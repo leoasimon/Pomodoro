@@ -9,21 +9,29 @@
 /* Begin PBXBuildFile section */
 		B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */; };
 		B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */; };
-		B341BD952C1C7E4900BB3B6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* ViewController.swift */; };
+		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
 		B341BD982C1C7E4900BB3B6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD962C1C7E4900BB3B6D /* Main.storyboard */; };
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
+		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
+		B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */; };
+		B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */; };
+		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B341BD8D2C1C7E4900BB3B6D /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B341BD942C1C7E4900BB3B6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionCollectionController.swift; sourceTree = "<group>"; };
 		B341BD972C1C7E4900BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewController.swift; sourceTree = "<group>"; };
+		B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CycleCardCollectionViewCell.xib; sourceTree = "<group>"; };
+		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,12 @@
 			children = (
 				B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */,
 				B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */,
-				B341BD942C1C7E4900BB3B6D /* ViewController.swift */,
+				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
+				B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */,
 				B341BD962C1C7E4900BB3B6D /* Main.storyboard */,
+				B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */,
+				B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */,
+				B3B30ECF2C247AED0011056A /* Cycle.swift */,
 				B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */,
 				B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */,
 				B341BD9E2C1C7E4A00BB3B6D /* Info.plist */,
@@ -126,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */,
+				B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */,
 				B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */,
 				B341BD982C1C7E4900BB3B6D /* Main.storyboard in Resources */,
 			);
@@ -138,9 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B341BD952C1C7E4900BB3B6D /* ViewController.swift in Sources */,
+				B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */,
+				B3B30ED02C247AED0011056A /* Cycle.swift in Sources */,
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
+				B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
+				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
