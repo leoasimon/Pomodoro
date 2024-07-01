@@ -12,11 +12,6 @@ enum TimerType: String, Codable {
     case work
 }
 
-struct CycleTimer: Codable {
-    var type: TimerType
-    var duration: Int
-}
-
 struct CycleColors: Codable {
     var work: String
     var pause: String

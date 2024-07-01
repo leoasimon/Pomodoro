@@ -50,7 +50,7 @@ extension CycleSelectionViewModel: CycleCellActionsDelegate {
             return
         }
         
-        timerView.configure(cycle: cycle)
+        timerView.configure(with: cycle)
         navigationController?.pushViewController(timerView, animated: true)
     }
 }

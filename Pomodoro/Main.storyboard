@@ -84,7 +84,7 @@
         <scene sceneID="RNS-BX-f9C">
             <objects>
                 <viewController storyboardIdentifier="TimerView" id="Qxf-QB-Dxn" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bpr-mZ-UCM">
+                    <view key="view" contentMode="scaleToFill" id="bpr-mZ-UCM" customClass="TimerView" customModule="Pomodoro" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -98,6 +98,9 @@
                                 <rect key="frame" x="179" y="138" width="56" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                                <connections>
+                                    <action selector="toggleTimer:" destination="bpr-mZ-UCM" eventType="touchUpInside" id="wEI-Pj-2aV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nak-au-Koa"/>
@@ -108,11 +111,11 @@
                             <constraint firstItem="95T-Af-ukU" firstAttribute="centerX" secondItem="k9W-KQ-Ssn" secondAttribute="centerX" id="cEt-wb-wvX"/>
                             <constraint firstItem="k9W-KQ-Ssn" firstAttribute="centerX" secondItem="nak-au-Koa" secondAttribute="centerX" id="ojC-xV-7Sa"/>
                         </constraints>
+                        <connections>
+                            <outlet property="controlBtn" destination="95T-Af-ukU" id="QEM-pb-axr"/>
+                            <outlet property="timerLabel" destination="k9W-KQ-Ssn" id="m5K-uz-1op"/>
+                        </connections>
                     </view>
-                    <connections>
-                        <outlet property="controlBtn" destination="95T-Af-ukU" id="Z0f-HN-HgH"/>
-                        <outlet property="timerLabel" destination="k9W-KQ-Ssn" id="Wrs-D3-8KE"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMe-Xi-FRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
