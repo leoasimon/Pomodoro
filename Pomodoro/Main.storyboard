@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cycle Selection Collection Controller-->
+        <!--Cycle Selection View Controller-->
         <scene sceneID="fxv-er-bFo">
             <objects>
-                <viewController id="vLZ-yZ-kRz" customClass="CycleSelectionCollectionController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vLZ-yZ-kRz" customClass="CycleSelectionViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="H7I-n2-e6t">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -80,28 +80,39 @@
             </objects>
             <point key="canvasLocation" x="1709" y="110"/>
         </scene>
-        <!--View Controller-->
+        <!--Timer View Controller-->
         <scene sceneID="RNS-BX-f9C">
             <objects>
-                <viewController storyboardIdentifier="TimerView" id="Qxf-QB-Dxn" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerView" id="Qxf-QB-Dxn" customClass="TimerViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bpr-mZ-UCM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k9W-KQ-Ssn">
-                                <rect key="frame" x="20" y="96" width="42" height="21"/>
+                                <rect key="frame" x="186" y="60" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95T-Af-ukU">
+                                <rect key="frame" x="179" y="138" width="56" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Start"/>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nak-au-Koa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="k9W-KQ-Ssn" firstAttribute="top" secondItem="nak-au-Koa" secondAttribute="top" constant="52" id="UGV-Jh-Kp4"/>
-                            <constraint firstItem="k9W-KQ-Ssn" firstAttribute="leading" secondItem="nak-au-Koa" secondAttribute="leading" constant="20" id="aJm-sh-1Ix"/>
+                            <constraint firstItem="95T-Af-ukU" firstAttribute="top" secondItem="k9W-KQ-Ssn" secondAttribute="bottom" constant="57" id="CWj-KR-fOO"/>
+                            <constraint firstItem="k9W-KQ-Ssn" firstAttribute="top" secondItem="nak-au-Koa" secondAttribute="top" constant="16" id="UdO-gU-sMH"/>
+                            <constraint firstItem="95T-Af-ukU" firstAttribute="centerX" secondItem="k9W-KQ-Ssn" secondAttribute="centerX" id="cEt-wb-wvX"/>
+                            <constraint firstItem="k9W-KQ-Ssn" firstAttribute="centerX" secondItem="nak-au-Koa" secondAttribute="centerX" id="ojC-xV-7Sa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="controlBtn" destination="95T-Af-ukU" id="Z0f-HN-HgH"/>
+                        <outlet property="timerLabel" destination="k9W-KQ-Ssn" id="Wrs-D3-8KE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eMe-Xi-FRM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

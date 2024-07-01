@@ -7,12 +7,23 @@
 
 import UIKit
 
-struct CycleColors {
-    var work: Int
-    var pause: Int
+enum TimerType: String, Codable {
+    case pause
+    case work
 }
 
-struct Cycle {
+struct CycleTimer: Codable {
+    var type: TimerType
+    var duration: Int
+}
+
+struct CycleColors: Codable {
+    var work: String
+    var pause: String
+}
+
+struct Cycle: Codable {
     var name: String
     var colors: CycleColors
+    var timers: [CycleTimer]
 }

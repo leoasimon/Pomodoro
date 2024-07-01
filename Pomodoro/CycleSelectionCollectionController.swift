@@ -7,14 +7,16 @@
 
 import UIKit
 
-class CycleSelectionCollectionController: UIViewController {
+class CycleSelectionViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let cycles: [Cycle] = [
-        Cycle(name: "Classic Pomodoro", colors: CycleColors(work: 0xFF6347, pause: 0xFF9F43)),
-        Cycle(name: "DeskTime 2014", colors: CycleColors(work: 0x1DD1A1, pause: 0xFF6E4E)),
-        Cycle(name: "In The Zone", colors: CycleColors(work: 0x5F27CD, pause: 0xCD7727))
-    ]
+    static let pomodoroWorkTimer = CycleTimer(type: .work, duration: 25)
+    static let pomodoroPauseTimer = CycleTimer(type: .pause, duration: 5)
+    static let pomodoroLongPauseTimer = CycleTimer(type: .pause, duration: 15)
+    
+    static let pomodoroTimers = [pomodoroWorkTimer, pomodoroPauseTimer, pomodoroWorkTimer, pomodoroPauseTimer, pomodoroWorkTimer, pomodoroPauseTimer, pomodoroWorkTimer, pomodoroLongPauseTimer]
+    
+    var cycles: [Cycle] = []
     
     override func viewDidLoad() {
         print("Loading view")
@@ -35,10 +37,30 @@ class CycleSelectionCollectionController: UIViewController {
         
         title = "Select your cycle"
         navigationController?.navigationBar.prefersLargeTitles = true
+        
+        loadCycles()
+    }
+    
+    func loadCycles() {
+        guard let cyclesFileUrl = Bundle.main.url(forResource: "cycles", withExtension: "json") else {
+            print("Unable to locate the cycles file")
+            return
+        }
+        
+        guard let cyclesContent = try? Data(contentsOf: cyclesFileUrl) else {
+            print("Unable to read the content for the cycles file")
+            return
+        }
+        
+        let decoder = JSONDecoder()
+        let jsonCycles = try! decoder.decode([Cycle].self, from: cyclesContent)
+        
+        print(jsonCycles)
+        cycles = jsonCycles
     }
 }
 
-extension CycleSelectionCollectionController: UICollectionViewDelegate {
+extension CycleSelectionViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
         
@@ -49,7 +71,7 @@ extension CycleSelectionCollectionController: UICollectionViewDelegate {
     }
 }
 
-extension CycleSelectionCollectionController: UICollectionViewDataSource {
+extension CycleSelectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cycles.count
     }
@@ -63,7 +85,7 @@ extension CycleSelectionCollectionController: UICollectionViewDataSource {
     }
 }
 
-extension CycleSelectionCollectionController: UICollectionViewDelegateFlowLayout {
+extension CycleSelectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let padding = 12.0
         let availableWidth = collectionView.bounds.inset(by: collectionView.layoutMargins).width
@@ -78,14 +100,20 @@ protocol CycleSelectionAction {
     func openCycleTimer(cycle: Cycle)
 }
 
-extension CycleSelectionCollectionController: CycleSelectionAction {
+extension CycleSelectionViewController: CycleSelectionAction {
     func openCycleInfos(cycle: Cycle) {
         print("Should open cycle info for \(cycle.name)")
     }
     
     func openCycleTimer(cycle: Cycle) {
         print("Should open timer for \(cycle.name)")
+        
+        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerViewController.identifier) as? TimerViewController else {
+            print("Unable to instantiate timer view")
+            return
+        }
+        
+        timerView.configure(cycle: cycle)
+        navigationController?.pushViewController(timerView, animated: true)
     }
 }
-
-//extension CycleSelectionCollectionController" "

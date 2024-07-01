@@ -10,14 +10,15 @@
 		B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */; };
 		B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */; };
 		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
-		B341BD982C1C7E4900BB3B6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD962C1C7E4900BB3B6D /* Main.storyboard */; };
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
 		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
-		B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */; };
-		B3A790642C276C6100E7E257 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3A790632C276C6100E7E257 /* Colors.swift */; };
 		B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */; };
 		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
+		B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FD2C32E32700E5AA54 /* cycles.json */; };
+		B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FF2C32E39200E5AA54 /* Main.storyboard */; };
+		B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402012C32E3A600E5AA54 /* TimerViewController.swift */; };
+		B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402032C32E3EE00E5AA54 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,15 +26,16 @@
 		B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionCollectionController.swift; sourceTree = "<group>"; };
-		B341BD972C1C7E4900BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewController.swift; sourceTree = "<group>"; };
-		B3A790632C276C6100E7E257 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionViewCell.swift; sourceTree = "<group>"; };
 		B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CycleCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
+		B3B401FD2C32E32700E5AA54 /* cycles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cycles.json; sourceTree = "<group>"; };
+		B3B401FF2C32E39200E5AA54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B3B402012C32E3A600E5AA54 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B3B402032C32E3EE00E5AA54 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +52,7 @@
 		B341BD842C1C7E4900BB3B6D = {
 			isa = PBXGroup;
 			children = (
-				B3A790632C276C6100E7E257 /* Colors.swift */,
+				B3B401FD2C32E32700E5AA54 /* cycles.json */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
 			);
@@ -67,11 +69,12 @@
 		B341BD8F2C1C7E4900BB3B6D /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				B3B402032C32E3EE00E5AA54 /* Colors.swift */,
+				B3B402012C32E3A600E5AA54 /* TimerViewController.swift */,
+				B3B401FF2C32E39200E5AA54 /* Main.storyboard */,
 				B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */,
 				B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */,
 				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
-				B3A790612C2751EA00E7E257 /* CycleSelectionViewController.swift */,
-				B341BD962C1C7E4900BB3B6D /* Main.storyboard */,
 				B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */,
 				B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */,
 				B3B30ECF2C247AED0011056A /* Cycle.swift */,
@@ -141,9 +144,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */,
+				B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */,
 				B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */,
 				B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */,
-				B341BD982C1C7E4900BB3B6D /* Main.storyboard in Resources */,
+				B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,8 +161,8 @@
 				B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */,
 				B3B30ED02C247AED0011056A /* Cycle.swift in Sources */,
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
-				B3A790642C276C6100E7E257 /* Colors.swift in Sources */,
-				B3A790622C2751EA00E7E257 /* CycleSelectionViewController.swift in Sources */,
+				B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */,
+				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,
 			);
@@ -167,14 +171,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B341BD962C1C7E4900BB3B6D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B341BD972C1C7E4900BB3B6D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

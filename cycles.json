@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Classic Pomodoro",
+        "colors": {
+            "work": "FF6347",
+            "pause": "FF9F43"
+        },
+        "timers": [
+            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 25}, {"type": "pause", "duration": 15}
+        ]
+    },
+    {
+        "name": "DeskTime 2014",
+        "colors": {
+            "work": "1DD1A1",
+            "pause": "FF6E4E"
+        },
+        "timers": [
+            {"type": "work","duration": 57}, {"type": "pause", "duration": 17}
+        ]
+    },
+    {
+        "name": "In The Zone",
+        "colors": {
+            "work": "5F27CD",
+            "pause": "CD7727"
+        },
+        "timers": [
+            {"type": "work","duration": 72}, {"type": "pause", "duration": 28}
+        ]
+    },
+]
