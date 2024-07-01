@@ -19,6 +19,9 @@
 		B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FF2C32E39200E5AA54 /* Main.storyboard */; };
 		B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402012C32E3A600E5AA54 /* TimerViewController.swift */; };
 		B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402032C32E3EE00E5AA54 /* Colors.swift */; };
+		B3B402062C32EF6F00E5AA54 /* CycleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */; };
+		B3B402082C32EFFC00E5AA54 /* CycleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */; };
+		B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		B3B401FF2C32E39200E5AA54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3B402012C32E3A600E5AA54 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B3B402032C32E3EE00E5AA54 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionView.swift; sourceTree = "<group>"; };
+		B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewModel.swift; sourceTree = "<group>"; };
+		B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,6 @@
 		B341BD842C1C7E4900BB3B6D = {
 			isa = PBXGroup;
 			children = (
-				B3B401FD2C32E32700E5AA54 /* cycles.json */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
 			);
@@ -69,9 +74,13 @@
 		B341BD8F2C1C7E4900BB3B6D /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				B3B401FD2C32E32700E5AA54 /* cycles.json */,
+				B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */,
 				B3B402032C32E3EE00E5AA54 /* Colors.swift */,
 				B3B402012C32E3A600E5AA54 /* TimerViewController.swift */,
 				B3B401FF2C32E39200E5AA54 /* Main.storyboard */,
+				B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */,
+				B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */,
 				B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */,
 				B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */,
 				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
@@ -160,11 +169,14 @@
 			files = (
 				B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */,
 				B3B30ED02C247AED0011056A /* Cycle.swift in Sources */,
+				B3B402082C32EFFC00E5AA54 /* CycleSelectionViewModel.swift in Sources */,
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
 				B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */,
+				B3B402062C32EF6F00E5AA54 /* CycleSelectionView.swift in Sources */,
 				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,
+				B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

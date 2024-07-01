@@ -13,7 +13,7 @@
         <scene sceneID="fxv-er-bFo">
             <objects>
                 <viewController id="vLZ-yZ-kRz" customClass="CycleSelectionViewController" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="H7I-n2-e6t">
+                    <view key="view" contentMode="scaleToFill" id="H7I-n2-e6t" customClass="CycleSelectionView" customModule="Pomodoro" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

@@ -11,40 +11,39 @@ class CycleCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var view: UIView!
     @IBOutlet var selectBtn: UIButton!
-    @IBOutlet var infoBtn: UIButton!
-    
-    var cycleSelectionActionDelegate: CycleSelectionAction!
-    var cycle: Cycle!
+    var viewModel: CycleCardCellViewModel? {
+        didSet {
+            fillUI()
+        }
+    }
     
     static let identifier = "CycleCardCollectionViewCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        selectBtn.addTarget(self, action: #selector(openTimerView), for: .touchUpInside)
-        infoBtn.addTarget(self, action: #selector(openInfo), for: .touchUpInside)
     }
     
-    public func configure(with cycleConf: Cycle, selectionActionDelegate: CycleSelectionAction) {
+    func fillUI() {
+        guard let viewModel = viewModel else {
+            return
+        }
         
-        cycleSelectionActionDelegate = selectionActionDelegate
-        cycle = cycleConf
-        
-        view.backgroundColor = UIColor(rgb: cycleConf.colors.work)
-        nameLabel.text = cycleConf.name
-        selectBtn.titleLabel?.textColor = UIColor(rgb: cycleConf.colors.work)
+        view.backgroundColor = UIColor(rgb: viewModel.cycle.colors.work)
+        nameLabel.text = viewModel.cycle.name
+        selectBtn.titleLabel?.textColor = UIColor(rgb: viewModel.cycle.colors.work)
         layer.cornerRadius = 14
+        
     }
     
     static func nib() -> UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
     
-    @objc func openTimerView() {
-        cycleSelectionActionDelegate.openCycleTimer(cycle: cycle)
+    @IBAction func openTimer() {
+        viewModel?.openTimerView()
     }
     
-    @objc func openInfo() {
-        cycleSelectionActionDelegate.openCycleInfos(cycle: cycle)
+    @IBAction func openInfo() {
+        viewModel?.openInfo()
     }
 }
