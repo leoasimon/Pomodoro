@@ -8,8 +8,13 @@
 import UIKit
 
 class TimerView: UIView {
-    @IBOutlet weak var timerLabel: UILabel?
+    @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var controlBtn: UIButton!
+    @IBOutlet weak var timerImage: UIImageView!
+    @IBOutlet weak var timerBgView: UIView!
+    @IBOutlet weak var upNextView: UIView!
+    @IBOutlet weak var upNextImage: UIImageView!
+    @IBOutlet weak var upNextLabel: UILabel!
     
     var viewModel: TimerViewModel? {
         didSet {
@@ -24,17 +29,40 @@ class TimerView: UIView {
 
 protocol TimerViewUIUpdateDelegate {
     func updateTimerLabel(with newLabel: String)
-    func updateControlBtnTitle(with newTitle: String)
+    func updateControlBtnTitle(text: String, image: UIImage, color: UIColor)
+    func updateTimer(image: UIImage, color: UIColor)
+    
+    func setUpNext(image: UIImage, text: String)
+    func showUpNext()
+    func hideUpNext()
 }
 
 extension TimerView: TimerViewUIUpdateDelegate {
     func updateTimerLabel(with newLabel: String) {
-        print("About to update label with \(newLabel)")
-        timerLabel?.text = newLabel
+        timerLabel.text = newLabel
     }
     
-    func updateControlBtnTitle(with newTitle: String) {
-//        controlBtn.titleLabel?.text = newTitle
-        controlBtn.setTitle(newTitle, for: .normal)
+    func updateControlBtnTitle(text: String, image: UIImage, color: UIColor) {
+        controlBtn.setTitle(text, for: .normal)
+        controlBtn.setImage(image, for: .normal)
+        controlBtn.setTitleColor(color, for: .normal)
+    }
+    
+    func updateTimer(image: UIImage, color: UIColor) {
+        timerImage.image = image
+        timerBgView.backgroundColor = color
+    }
+    
+    func setUpNext(image: UIImage, text: String) {
+        upNextImage.image = image
+        upNextLabel.text = text
+    }
+    
+    func showUpNext() {
+        upNextView.layer.opacity = 1
+    }
+    
+    func hideUpNext() {
+        upNextView.layer.opacity = 0
     }
 }

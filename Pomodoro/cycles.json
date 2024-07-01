@@ -6,10 +6,23 @@
             "pause": "FF9F43"
         },
         "timers": [
-            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 25}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 25}, {"type": "pause", "duration": 15}
+            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
+            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
+            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
+            {"type": "work","duration": 1500}, {"type": "pause", "duration": 900}
+        ]
+    },
+    {
+        "name": "Quick test",
+        "colors": {
+            "work": "FF6347",
+            "pause": "FF9F43"
+        },
+        "timers": [
+            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
+            {"type": "work","duration": 10}, {"type": "pause", "duration": 15}
         ]
     },
     {
@@ -19,7 +32,7 @@
             "pause": "FF6E4E"
         },
         "timers": [
-            {"type": "work","duration": 57}, {"type": "pause", "duration": 17}
+            {"type": "work","duration": 3420}, {"type": "pause", "duration": 1020}
         ]
     },
     {
@@ -29,7 +42,7 @@
             "pause": "CD7727"
         },
         "timers": [
-            {"type": "work","duration": 72}, {"type": "pause", "duration": 28}
+            {"type": "work","duration": 4320}, {"type": "pause", "duration": 1680}
         ]
     },
 ]

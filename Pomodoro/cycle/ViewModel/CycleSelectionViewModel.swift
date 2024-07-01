@@ -43,8 +43,6 @@ extension CycleSelectionViewModel: CycleCellActionsDelegate {
     }
     
     func openCycleTimer(cycle: Cycle) {
-        print("Should open timer for \(cycle.name)")
-        
         guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerViewController.identifier) as? TimerViewController else {
             print("Unable to instantiate timer view")
             return

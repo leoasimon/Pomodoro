@@ -15,10 +15,16 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        guard let view = view as? TimerView else { return }
+        
+        view.viewModel?.clean()
+    }
+    
     func configure(with cycle: Cycle) {
         guard let view = view as? TimerView else { return }
         
-        let timerViewModel = TimerViewModel(timers: cycle.timers, delegate: view)
+        let timerViewModel = TimerViewModel(cycle: cycle, delegate: view)
         
         view.viewModel = timerViewModel
     }
