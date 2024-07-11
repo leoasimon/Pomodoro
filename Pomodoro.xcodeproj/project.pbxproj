@@ -25,6 +25,7 @@
 		B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402122C33062400E5AA54 /* TimerViewModel.swift */; };
 		B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402142C3306FB00E5AA54 /* TimerView.swift */; };
 		B3B402182C331FA800E5AA54 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402172C331FA800E5AA54 /* Timer.swift */; };
+		B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C65A832C401D5000B80B91 /* TimeFormatter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		B3B402122C33062400E5AA54 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		B3B402142C3306FB00E5AA54 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B3B402172C331FA800E5AA54 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
+		B3C65A832C401D5000B80B91 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		B341BD842C1C7E4900BB3B6D = {
 			isa = PBXGroup;
 			children = (
+				B3C65A832C401D5000B80B91 /* TimeFormatter.swift */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
 			);
@@ -107,10 +110,6 @@
 		B3B4020C2C3305AF00E5AA54 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */,
-				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
-				B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */,
-				B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */,
 				B3B30ECF2C247AED0011056A /* Cycle.swift */,
 			);
 			path = Model;
@@ -119,6 +118,10 @@
 		B3B4020D2C3305BA00E5AA54 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */,
+				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
+				B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */,
+				B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				B3B402062C32EF6F00E5AA54 /* CycleSelectionView.swift in Sources */,
 				B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */,
 				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
+				B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
 				B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,

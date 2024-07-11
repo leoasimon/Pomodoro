@@ -46,7 +46,7 @@
                                         </constraints>
                                     </view>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="laptopcomputer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pOh-YF-kVx">
-                                        <rect key="frame" x="0.0" y="58" width="50" height="46"/>
+                                        <rect key="frame" x="-8" y="58" width="50" height="46"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="6ca-cf-9O8"/>
@@ -54,13 +54,13 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2u-9E-ENl">
-                                        <rect key="frame" x="0.0" y="106" width="50" height="14.5"/>
+                                        <rect key="frame" x="0.0" y="106" width="33.5" height="14.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cup.and.saucer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-cy-kYt">
-                                        <rect key="frame" x="82" y="56.5" width="50" height="48.5"/>
+                                        <rect key="frame" x="71.5" y="56.5" width="50" height="48.5"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="5Qv-ih-gCg"/>
@@ -68,7 +68,7 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="05:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1XS-D5-NXw">
-                                        <rect key="frame" x="90" y="106" width="34" height="15"/>
+                                        <rect key="frame" x="79.5" y="106" width="34" height="15"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -97,12 +97,11 @@
                                     <constraint firstItem="E2u-9E-ENl" firstAttribute="centerX" secondItem="pOh-YF-kVx" secondAttribute="centerX" id="E9L-YR-b4t"/>
                                     <constraint firstItem="mrt-At-4k6" firstAttribute="leading" secondItem="Wko-N3-PZd" secondAttribute="leading" id="GAZ-AL-8PE"/>
                                     <constraint firstItem="For-QJ-g0W" firstAttribute="centerY" secondItem="okH-n4-3zf" secondAttribute="centerY" id="I2f-km-f9Z"/>
-                                    <constraint firstItem="pOh-YF-kVx" firstAttribute="leading" secondItem="Wko-N3-PZd" secondAttribute="leading" id="Rbe-Cs-f4H"/>
-                                    <constraint firstItem="Mlm-cy-kYt" firstAttribute="leading" secondItem="pOh-YF-kVx" secondAttribute="trailing" constant="32" id="Sfb-UX-Q7C"/>
                                     <constraint firstItem="E2u-9E-ENl" firstAttribute="top" secondItem="pOh-YF-kVx" secondAttribute="bottom" id="W0f-Y6-4fO"/>
                                     <constraint firstItem="1XS-D5-NXw" firstAttribute="centerX" secondItem="Mlm-cy-kYt" secondAttribute="centerX" id="Xm4-UD-tT3"/>
                                     <constraint firstItem="okH-n4-3zf" firstAttribute="top" secondItem="Wko-N3-PZd" secondAttribute="top" id="bW9-1s-Vzt"/>
                                     <constraint firstItem="Mlm-cy-kYt" firstAttribute="top" secondItem="mrt-At-4k6" secondAttribute="bottom" constant="11" id="eDl-74-qty"/>
+                                    <constraint firstItem="1XS-D5-NXw" firstAttribute="leading" secondItem="E2u-9E-ENl" secondAttribute="trailing" constant="46" id="fEN-b3-ANN"/>
                                     <constraint firstItem="E2u-9E-ENl" firstAttribute="leading" secondItem="Wko-N3-PZd" secondAttribute="leading" id="fHd-uq-59B"/>
                                     <constraint firstAttribute="trailing" secondItem="mrt-At-4k6" secondAttribute="trailing" id="iU3-aX-he9"/>
                                     <constraint firstItem="1qX-1H-CdO" firstAttribute="centerX" secondItem="Wko-N3-PZd" secondAttribute="centerX" id="kjV-fb-sfj"/>
@@ -134,8 +133,10 @@
             <size key="customSize" width="787" height="291"/>
             <connections>
                 <outlet property="nameLabel" destination="For-QJ-g0W" id="SuI-zI-2G8"/>
+                <outlet property="pauseTimeLabel" destination="1XS-D5-NXw" id="qyp-aM-pEH"/>
                 <outlet property="selectBtn" destination="1qX-1H-CdO" id="tEm-aV-AVm"/>
                 <outlet property="view" destination="RwD-YX-UiK" id="5J1-eB-d6i"/>
+                <outlet property="workTimeLabel" destination="E2u-9E-ENl" id="zvU-xE-90C"/>
             </connections>
             <point key="canvasLocation" x="515.21739130434787" y="89.397321428571431"/>
         </collectionViewCell>

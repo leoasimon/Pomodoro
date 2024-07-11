@@ -1,5 +1,18 @@
 [
     {
+        "name": "Test",
+        "colors": {
+            "work": "eac9af",
+            "pause": "eaafb3"
+        },
+        "timers": [
+            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
+            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
+            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
+            {"type": "work","duration": 5}, {"type": "pause", "duration": 10}
+        ]
+    },
+    {
         "name": "Classic Pomodoro",
         "colors": {
             "work": "FF6347",
@@ -10,19 +23,6 @@
             {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
             {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
             {"type": "work","duration": 1500}, {"type": "pause", "duration": 900}
-        ]
-    },
-    {
-        "name": "Quick test",
-        "colors": {
-            "work": "FF6347",
-            "pause": "FF9F43"
-        },
-        "timers": [
-            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 10}, {"type": "pause", "duration": 5},
-            {"type": "work","duration": 10}, {"type": "pause", "duration": 15}
         ]
     },
     {

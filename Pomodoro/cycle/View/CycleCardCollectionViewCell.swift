@@ -11,6 +11,9 @@ class CycleCardCollectionViewCell: UICollectionViewCell {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var view: UIView!
     @IBOutlet var selectBtn: UIButton!
+    @IBOutlet var workTimeLabel: UILabel!
+    @IBOutlet var pauseTimeLabel: UILabel!
+    
     var viewModel: CycleCardCellViewModel? {
         didSet {
             fillUI()
@@ -31,6 +34,8 @@ class CycleCardCollectionViewCell: UICollectionViewCell {
         view.backgroundColor = UIColor(rgb: viewModel.cycle.colors.work)
         nameLabel.text = viewModel.cycle.name
         selectBtn.titleLabel?.textColor = UIColor(rgb: viewModel.cycle.colors.work)
+        workTimeLabel.text = TimeFormatter.secToTimeStr(for: viewModel.cycle.timers[0].duration)
+        pauseTimeLabel.text = TimeFormatter.secToTimeStr(for: viewModel.cycle.timers[1].duration)
         layer.cornerRadius = 14
         
     }
