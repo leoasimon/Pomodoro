@@ -6,10 +6,10 @@
             "pause": "eaafb3"
         },
         "timers": [
-            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
-            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
-            {"type": "work","duration": 5}, {"type": "pause", "duration": 3},
-            {"type": "work","duration": 5}, {"type": "pause", "duration": 10}
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 10, "name": "Long break"}
         ]
     },
     {
@@ -19,10 +19,10 @@
             "pause": "FF9F43"
         },
         "timers": [
-            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
-            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
-            {"type": "work","duration": 1500}, {"type": "pause", "duration": 300},
-            {"type": "work","duration": 1500}, {"type": "pause", "duration": 900}
+            {"name": "Work", "type": "work","duration": 1500}, {"name": "Small break", "type": "pause", "duration": 300},
+            {"name": "Work", "type": "work","duration": 1500}, {"name": "Small break", "type": "pause", "duration": 300},
+            {"name": "Work", "type": "work","duration": 1500}, {"name": "Small break", "type": "pause", "duration": 300},
+            {"name": "Work", "type": "work","duration": 1500}, {"name": "Long break", "type": "pause", "duration": 900},
         ]
     },
     {
@@ -32,7 +32,7 @@
             "pause": "FF6E4E"
         },
         "timers": [
-            {"type": "work","duration": 3420}, {"type": "pause", "duration": 1020}
+            {"name": "Work", "type": "work","duration": 3420}, {"name": "Break", "type": "pause", "duration": 1020}
         ]
     },
     {
@@ -42,7 +42,7 @@
             "pause": "CD7727"
         },
         "timers": [
-            {"type": "work","duration": 4320}, {"type": "pause", "duration": 1680}
+            {"name": "Work", "type": "work","duration": 4320}, {"name": "Break", "type": "pause", "duration": 1680}
         ]
     },
 ]

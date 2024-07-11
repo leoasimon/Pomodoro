@@ -21,10 +21,15 @@ final class TimerViewModel: NSObject {
     var currentTimer: CycleTimer {
         return timers[timerIndex]
     }
+    
+    var nextTimer: CycleTimer {
+        let i = timerIndex == timers.count - 1 ? 0 : timerIndex + 1
+        return timers[i]
+    }
 
     var time = 0 {
         didSet {
-            uiUpdateDelegate.updateTimerLabel(with: secToTimeStr(for: time))
+            uiUpdateDelegate.updateTimerLabel(with: TimeFormatter.secToTimeStr(for: time))
             if time == 0 {
                 skipToNextTimer()
                 startTimer()
@@ -34,15 +39,6 @@ final class TimerViewModel: NSObject {
 
     var timerIndex = 0
     var timer = Timer()
-    
-    let numberFormatter: NumberFormatter = {
-        let nf = NumberFormatter()
-        nf.numberStyle = .decimal
-        nf.minimumIntegerDigits = 2
-        nf.minimumFractionDigits = 0
-        nf.maximumFractionDigits = 0
-        return nf
-    }()
     
     init(cycle: Cycle, delegate: TimerViewUIUpdateDelegate) {
         self.timers = cycle.timers
@@ -71,30 +67,10 @@ final class TimerViewModel: NSObject {
         if (currentTimer.type == .work) {
             let color = colors.work
             uiUpdateDelegate.updateTimer(image: TimerViewModel.workImage, color: UIColor(rgb: color))
-            
-            let upNextText = "Break: \(secToTimeStr(for: time))"
-            let image = TimerViewModel.breakImage.withTintColor(UIColor(rgb: colors.pause), renderingMode: .alwaysOriginal)
-            uiUpdateDelegate.setUpNext(image: image, text: upNextText)
         } else {
             let color = colors.pause
             uiUpdateDelegate.updateTimer(image: TimerViewModel.breakImage, color: UIColor(rgb: color))
-            
-            let upNextText = "Work: \(secToTimeStr(for: time))"
-            let image = TimerViewModel.workImage.withTintColor(UIColor(rgb: colors.work), renderingMode: .alwaysOriginal)
-            uiUpdateDelegate.setUpNext(image: image, text: upNextText)
         }
-    }
-
-    func secToTimeStr(for seconds: Int) -> String {
-        let h = seconds / (60 * 60)
-        let m = (seconds / 60) % 60
-        let s = seconds % 60
-        
-        let hStr = numberFormatter.string(from: NSNumber(value: h))!
-        let mStr = numberFormatter.string(from: NSNumber(value: m))!
-        let sStr = numberFormatter.string(from: NSNumber(value: s))!
-
-        return "\(hStr):\(mStr):\(sStr)"
     }
     
     @objc func tick() {
@@ -117,7 +93,11 @@ final class TimerViewModel: NSObject {
         let img = TimerViewModel.forwardIcon.withTintColor(color, renderingMode: .alwaysOriginal)
         uiUpdateDelegate.updateControlBtnTitle(text: buttonText, image: img, color: color)
         
-        uiUpdateDelegate.showUpNext()
+        let timerText = "\(nextTimer.name): \(TimeFormatter.secToTimeStr(for: nextTimer.duration))"
+        let image = nextTimer.type == .work ? TimerViewModel.workImage : TimerViewModel.breakImage
+        let tintColor = nextTimer.type == .work ? UIColor(rgb: colors.work) : UIColor(rgb: colors.pause)
+        let imageWithTint = image.withTintColor(tintColor, renderingMode: .alwaysOriginal)
+        uiUpdateDelegate.showUpNext(image: imageWithTint, text: timerText)
     }
     
     func skipToNextTimer() {

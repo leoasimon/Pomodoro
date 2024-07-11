@@ -6,7 +6,7 @@
 //
 import UIKit
 
-class CycleCardCollectionViewCell: UICollectionViewCell {
+class CycleCardCollectionCellView: UICollectionViewCell {
     
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var view: UIView!

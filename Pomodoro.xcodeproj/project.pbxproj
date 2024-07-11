@@ -13,13 +13,12 @@
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
 		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
-		B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */; };
+		B3B30ECD2C2479510011056A /* CycleCardCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */; };
 		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
 		B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FD2C32E32700E5AA54 /* cycles.json */; };
 		B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FF2C32E39200E5AA54 /* Main.storyboard */; };
 		B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402012C32E3A600E5AA54 /* TimerViewController.swift */; };
 		B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402032C32E3EE00E5AA54 /* Colors.swift */; };
-		B3B402062C32EF6F00E5AA54 /* CycleSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */; };
 		B3B402082C32EFFC00E5AA54 /* CycleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */; };
 		B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */; };
 		B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402122C33062400E5AA54 /* TimerViewModel.swift */; };
@@ -36,14 +35,13 @@
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionViewCell.swift; sourceTree = "<group>"; };
+		B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionCellView.swift; sourceTree = "<group>"; };
 		B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CycleCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		B3B401FD2C32E32700E5AA54 /* cycles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cycles.json; sourceTree = "<group>"; };
 		B3B401FF2C32E39200E5AA54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B3B402012C32E3A600E5AA54 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B3B402032C32E3EE00E5AA54 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionView.swift; sourceTree = "<group>"; };
 		B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewModel.swift; sourceTree = "<group>"; };
 		B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCellViewModel.swift; sourceTree = "<group>"; };
 		B3B402122C33062400E5AA54 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
@@ -118,9 +116,8 @@
 		B3B4020D2C3305BA00E5AA54 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B3B402052C32EF6F00E5AA54 /* CycleSelectionView.swift */,
 				B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */,
-				B3B30ECB2C2479510011056A /* CycleCardCollectionViewCell.swift */,
+				B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */,
 				B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */,
 			);
 			path = View;
@@ -249,13 +246,12 @@
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
 				B3B402182C331FA800E5AA54 /* Timer.swift in Sources */,
 				B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */,
-				B3B402062C32EF6F00E5AA54 /* CycleSelectionView.swift in Sources */,
 				B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */,
 				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
 				B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
 				B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */,
-				B3B30ECD2C2479510011056A /* CycleCardCollectionViewCell.swift in Sources */,
+				B3B30ECD2C2479510011056A /* CycleCardCollectionCellView.swift in Sources */,
 				B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

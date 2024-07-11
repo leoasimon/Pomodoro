@@ -68,7 +68,7 @@ extension CycleSelectionViewModel: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CycleCardCollectionViewCell.identifier, for: indexPath) as! CycleCardCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CycleCardCollectionCellView.identifier, for: indexPath) as! CycleCardCollectionCellView
         
         let cellViewModel = CycleCardCellViewModel()
         cellViewModel.configure(with: cycles[indexPath.row], selectionActionDelegate: self)

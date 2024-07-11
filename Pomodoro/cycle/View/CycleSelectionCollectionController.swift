@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CycleSelectionViewController: UIViewController {
+class CycleSelectionView: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     let viewModel = CycleSelectionViewModel()
@@ -17,9 +17,9 @@ class CycleSelectionViewController: UIViewController {
         
         viewModel.storyboard = storyboard
         viewModel.navigationController = navigationController
-        let cycleCardCellNib = CycleCardCollectionViewCell.nib()
+        let cycleCardCellNib = CycleCardCollectionCellView.nib()
         
-        collectionView.register(cycleCardCellNib, forCellWithReuseIdentifier: CycleCardCollectionViewCell.identifier)
+        collectionView.register(cycleCardCellNib, forCellWithReuseIdentifier: CycleCardCollectionCellView.identifier)
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
         

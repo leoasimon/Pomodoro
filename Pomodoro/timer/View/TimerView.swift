@@ -18,7 +18,7 @@ class TimerView: UIView {
     
     var viewModel: TimerViewModel? {
         didSet {
-            updateTimerLabel(with: viewModel?.secToTimeStr(for: viewModel?.time ?? 0) ?? "")
+            updateTimerLabel(with: TimeFormatter.secToTimeStr(for: viewModel?.time ?? 0))
         }
     }
 
@@ -32,8 +32,7 @@ protocol TimerViewUIUpdateDelegate {
     func updateControlBtnTitle(text: String, image: UIImage, color: UIColor)
     func updateTimer(image: UIImage, color: UIColor)
     
-    func setUpNext(image: UIImage, text: String)
-    func showUpNext()
+    func showUpNext(image: UIImage, text: String)
     func hideUpNext()
 }
 
@@ -53,12 +52,9 @@ extension TimerView: TimerViewUIUpdateDelegate {
         timerBgView.backgroundColor = color
     }
     
-    func setUpNext(image: UIImage, text: String) {
+    func showUpNext(image: UIImage, text: String) {
         upNextImage.image = image
         upNextLabel.text = text
-    }
-    
-    func showUpNext() {
         upNextView.layer.opacity = 1
     }
     

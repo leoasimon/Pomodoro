@@ -10,4 +10,5 @@ import UIKit
 struct CycleTimer: Codable {
     var type: TimerType
     var duration: Int
+    var name: String
 }
