@@ -23,6 +23,7 @@ class TimerViewController: UIViewController {
     
     func configure(with cycle: Cycle) {
         guard let view = view as? TimerView else { return }
+        // this can be a nice example of how to handle casting for the other one that I left a comment
         
         let timerViewModel = TimerViewModel(cycle: cycle, delegate: view)
         

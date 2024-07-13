@@ -25,6 +25,8 @@ final class CycleSelectionViewModel: NSObject {
         
         let decoder = JSONDecoder()
         let jsonCycles = try! decoder.decode([Cycle].self, from: cyclesContent)
+        // could we please try to remove these force unwraps? Maybe nil coalescing with a default value could be a good solution.
+        
         
         cycles = jsonCycles
     }
@@ -69,6 +71,7 @@ extension CycleSelectionViewModel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CycleCardCollectionCellView.identifier, for: indexPath) as! CycleCardCollectionCellView
+        // Try to avoid force casting like this,  it may crash the application when a simple warning that something went wrong could be enough.
         
         let cellViewModel = CycleCardCellViewModel()
         cellViewModel.configure(with: cycles[indexPath.row], selectionActionDelegate: self)

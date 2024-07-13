@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A0DE5F522C42CC04003177F3 /* Feedback.md in Resources */ = {isa = PBXBuildFile; fileRef = A0DE5F512C42CC04003177F3 /* Feedback.md */; };
 		B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */; };
 		B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */; };
 		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A0DE5F512C42CC04003177F3 /* Feedback.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Feedback.md; sourceTree = "<group>"; };
 		B341BD8D2C1C7E4900BB3B6D /* Pomodoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pomodoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B341BD902C1C7E4900BB3B6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B341BD922C1C7E4900BB3B6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		B341BD842C1C7E4900BB3B6D = {
 			isa = PBXGroup;
 			children = (
+				A0DE5F512C42CC04003177F3 /* Feedback.md */,
 				B3C65A832C401D5000B80B91 /* TimeFormatter.swift */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
@@ -230,6 +233,7 @@
 				B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */,
 				B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */,
 				B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */,
+				A0DE5F522C42CC04003177F3 /* Feedback.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
