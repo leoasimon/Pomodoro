@@ -19,6 +19,7 @@ class CycleCardCollectionCellView: UICollectionViewCell {
             fillUI()
         }
     }
+    // It's not a very common practice to have a ViewModel as optional, we can have a discussion about this during the next session if you want.
     
     static let identifier = "CycleCardCollectionViewCell"
     

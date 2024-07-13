@@ -14,6 +14,7 @@ final class TimerViewModel: NSObject {
     static let breakImage = UIImage(systemName: "cup.and.saucer")!
     static let forwardIcon = UIImage(systemName: "forward.end")!
     static let playIcon = UIImage(systemName: "play")!
+    // could we please try to remove these force unwraps? Maybe nil coalescing with a default value could be a good solution.
     
     let uiUpdateDelegate: TimerViewUIUpdateDelegate
     let timers: [CycleTimer]
