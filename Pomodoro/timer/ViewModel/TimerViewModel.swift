@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 final class TimerViewModel: NSObject {
     
@@ -18,6 +19,9 @@ final class TimerViewModel: NSObject {
     let uiUpdateDelegate: TimerViewUIUpdateDelegate
     let timers: [CycleTimer]
     let colors: CycleColors
+    
+    var breakAudioPlayer: AVAudioPlayer?
+    var workAudioPlayer: AVAudioPlayer?
 
     var currentTimer: CycleTimer {
         return timers[timerIndex]
@@ -33,6 +37,7 @@ final class TimerViewModel: NSObject {
             uiUpdateDelegate.updateTimerLabel(with: TimeFormatter.secToTimeStr(for: time))
             if time == 0 {
                 skipToNextTimer()
+                playTimerSound()
                 startTimer()
             }
         }
@@ -55,6 +60,17 @@ final class TimerViewModel: NSObject {
         let color = UIColor(rgb: colors.work)
         let img = TimerViewModel.playIcon.withTintColor(color, renderingMode: .alwaysOriginal)
         uiUpdateDelegate.updateControlBtnTitle(text: "", image: img, color: UIColor(rgb: colors.work))
+        
+        guard let breakSoundUrl = Bundle.main.url(forResource: "break", withExtension: "wav") else {
+            return
+        }
+        
+        guard let workSoundUrl = Bundle.main.url(forResource: "work", withExtension: "wav") else {
+            return
+        }
+        
+        workAudioPlayer = try? AVAudioPlayer(contentsOf: workSoundUrl)
+        breakAudioPlayer = try? AVAudioPlayer(contentsOf: breakSoundUrl)
     }
     
     func clean() {
@@ -112,5 +128,12 @@ final class TimerViewModel: NSObject {
         uiUpdateDelegate.updateControlBtnTitle(text: "", image: img, color: color)
         time = currentTimer.duration
         updateTimerUI()
+    }
+    
+    func playTimerSound() {
+        let player = currentTimer.type == .work ? workAudioPlayer : breakAudioPlayer
+        
+        player?.prepareToPlay()
+        player?.play()
     }
 }

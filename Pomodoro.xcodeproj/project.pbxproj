@@ -13,6 +13,8 @@
 		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
+		B356F8152C471B8C00DD751F /* break.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8142C471B8C00DD751F /* break.wav */; };
+		B356F8172C471BE700DD751F /* work.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8162C471BE700DD751F /* work.wav */; };
 		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
 		B3B30ECD2C2479510011056A /* CycleCardCollectionCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */; };
 		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
@@ -37,6 +39,8 @@
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B356F8142C471B8C00DD751F /* break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = break.wav; sourceTree = "<group>"; };
+		B356F8162C471BE700DD751F /* work.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = work.wav; sourceTree = "<group>"; };
 		B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionCellView.swift; sourceTree = "<group>"; };
 		B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CycleCardCollectionViewCell.xib; sourceTree = "<group>"; };
 		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
@@ -69,6 +73,8 @@
 				A0DE5F512C42CC04003177F3 /* Feedback.md */,
 				B3C65A832C401D5000B80B91 /* TimeFormatter.swift */,
 				B341BD8F2C1C7E4900BB3B6D /* Pomodoro */,
+				B356F8142C471B8C00DD751F /* break.wav */,
+				B356F8162C471BE700DD751F /* work.wav */,
 				B341BD8E2C1C7E4900BB3B6D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -228,9 +234,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B356F8172C471BE700DD751F /* work.wav in Resources */,
 				B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */,
 				B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */,
 				B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */,
+				B356F8152C471B8C00DD751F /* break.wav in Resources */,
 				B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */,
 				B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */,
 				A0DE5F522C42CC04003177F3 /* Feedback.md in Resources */,
