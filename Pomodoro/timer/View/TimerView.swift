@@ -16,14 +16,19 @@ class TimerView: UIView {
     @IBOutlet weak var upNextImage: UIImageView!
     @IBOutlet weak var upNextLabel: UILabel!
     
-    var viewModel: TimerViewModel? {
-        didSet {
-            updateTimerLabel(with: TimeFormatter.secToTimeStr(for: viewModel?.time ?? 0))
-        }
-    }
+    let viewModel = TimerViewModel()
 
     @IBAction func toggleTimer(_ sender: Any) {
-        viewModel?.toggleTimer()
+        viewModel.toggleTimer()
+    }
+
+    func configure(cycle: Cycle) {
+        viewModel.configure(cycle: cycle, uiUpdateDelegate: self)
+        updateTimerLabel(with: TimeFormatter.secToTimeStr(for: viewModel.time))
+    }
+
+    func clean() {
+        viewModel.clean()
     }
 }
 

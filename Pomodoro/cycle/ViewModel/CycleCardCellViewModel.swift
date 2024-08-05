@@ -8,20 +8,22 @@
 import UIKit
 
 class CycleCardCellViewModel: NSObject {
-    var cycleSelectionActionDelegate: CycleCellActionsDelegate!
-    var cycle: Cycle!
-    // it's usually a good idea to have delegates as optional, specially in this case where the assignment of the delegate happens only when a configure function is called. Maybe we could have a better option in how to handle these scenarios?
+    var cycleSelectionActionDelegate: CycleCellActionsDelegate?
+    var cycle: Cycle?
     
     func openTimerView() {
-        cycleSelectionActionDelegate.openCycleTimer(cycle: cycle)
+        assert(cycle != nil && cycleSelectionActionDelegate != nil, "It seems some important objects were not initialized, did you forget to call the configure() method?")
+        guard let cycle = self.cycle else { return }
+        cycleSelectionActionDelegate?.openCycleTimer(cycle: cycle)
     }
     
     func openInfo() {
-        cycleSelectionActionDelegate.openCycleInfos(cycle: cycle)
+        assert(cycle != nil && cycleSelectionActionDelegate != nil, "It seems some important objects were not initialized, did you forget to call the configure() method?")
+        guard let cycle = self.cycle else { return }
+        cycleSelectionActionDelegate?.openCycleInfos(cycle: cycle)
     }
     
     public func configure(with cycleConf: Cycle, selectionActionDelegate: CycleCellActionsDelegate) {
-        
         cycleSelectionActionDelegate = selectionActionDelegate
         cycle = cycleConf
     }

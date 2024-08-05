@@ -13,6 +13,7 @@
 		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
+		B353729E2C5D428E005A963F /* attribute.md in Resources */ = {isa = PBXBuildFile; fileRef = B353729D2C5D428E005A963F /* attribute.md */; };
 		B356F8152C471B8C00DD751F /* break.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8142C471B8C00DD751F /* break.wav */; };
 		B356F8172C471BE700DD751F /* work.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8162C471BE700DD751F /* work.wav */; };
 		B3924FF92C2484F80044A5B9 /* CycleCardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B3B30ECC2C2479510011056A /* CycleCardCollectionViewCell.xib */; };
@@ -39,6 +40,7 @@
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B353729D2C5D428E005A963F /* attribute.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = attribute.md; sourceTree = "<group>"; };
 		B356F8142C471B8C00DD751F /* break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = break.wav; sourceTree = "<group>"; };
 		B356F8162C471BE700DD751F /* work.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = work.wav; sourceTree = "<group>"; };
 		B3B30ECB2C2479510011056A /* CycleCardCollectionCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCollectionCellView.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 		B341BD8F2C1C7E4900BB3B6D /* Pomodoro */ = {
 			isa = PBXGroup;
 			children = (
+				B353729D2C5D428E005A963F /* attribute.md */,
 				B3B4020F2C3305EF00E5AA54 /* timer */,
 				B3B401FD2C32E32700E5AA54 /* cycles.json */,
 				B3B4020B2C33058400E5AA54 /* cycle */,
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B353729E2C5D428E005A963F /* attribute.md in Resources */,
 				B356F8172C471BE700DD751F /* work.wav in Resources */,
 				B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */,
 				B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */,

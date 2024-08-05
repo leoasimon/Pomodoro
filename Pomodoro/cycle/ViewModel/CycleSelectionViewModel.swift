@@ -24,9 +24,11 @@ final class CycleSelectionViewModel: NSObject {
         }
         
         let decoder = JSONDecoder()
-        let jsonCycles = try! decoder.decode([Cycle].self, from: cyclesContent)
-        // could we please try to remove these force unwraps? Maybe nil coalescing with a default value could be a good solution.
-        
+        guard let jsonCycles = try? decoder.decode([Cycle].self, from: cyclesContent) else {
+            print("Unable to parse the cycle configuration file")
+            //            TODO: Show a dialog to the user
+            return
+        }
         
         cycles = jsonCycles
     }
@@ -58,9 +60,6 @@ extension CycleSelectionViewModel: CycleCellActionsDelegate {
 extension CycleSelectionViewModel: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         collectionView.deselectItem(at: indexPath, animated: true)
-        
-        guard let vc = storyboard?.instantiateViewController(withIdentifier: "TimerView") else { return }
-        navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -71,12 +70,9 @@ extension CycleSelectionViewModel: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CycleCardCollectionCellView.identifier, for: indexPath) as! CycleCardCollectionCellView
-        // Try to avoid force casting like this,  it may crash the application when a simple warning that something went wrong could be enough.
+        // TODO: Add comment to explain why I don't mind, or some explanation somewhere
         
-        let cellViewModel = CycleCardCellViewModel()
-        cellViewModel.configure(with: cycles[indexPath.row], selectionActionDelegate: self)
-        
-        cell.viewModel = cellViewModel
+        cell.configure(with: cycles[indexPath.row], selectionActionDelegate: self)
         
         return cell
     }
