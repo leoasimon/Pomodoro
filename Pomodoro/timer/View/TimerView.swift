@@ -42,39 +42,19 @@ class TimerView: UIView {
     }
 }
 
-protocol TimerViewUIUpdateDelegate {
-    func updateTimerLabel(with newLabel: String)
-    func updateControlBtnTitle(text: String, image: String, rgb: String)
-    func updateTimer(image: String, rgb: String)
-    
-    func showUpNext(image: String, tintColor: String, text: String)
-    func hideUpNext()
-}
-
 extension TimerView: TimerUIDelegate {
-    
-    func showTimer(timer: CycleTimer, colors: CycleColors) {
-        upNextView.layer.opacity = 0
-        timerLabel.text = TimeFormatter.secToTimeStr(for: timer.duration)
+    func showTimer(type: TimerType, duration: Int, rgb: String) {
+        let color = UIColor(rgb: rgb)
+        timerLabel.text = TimeFormatter.secToTimeStr(for: duration)
         
-        switch timer.type {
-        case .work:
-            let color = UIColor(rgb: colors.work)
-            
-            controlBtn.setTitle("", for: .normal)
-            controlBtn.setTitleColor(color, for: .normal)
-            controlBtn.setImage(TimerView.playIcon.withTintColor(UIColor(rgb: colors.work), renderingMode: .alwaysOriginal), for: .normal)
-            timerImage.image = TimerView.workImage
-            timerBgView.backgroundColor = UIColor(rgb: colors.work)
-        case .pause:
-            let color = UIColor(rgb: colors.pause)
-            
-            controlBtn.setTitle("", for: .normal)
-            controlBtn.setTitleColor(color, for: .normal)
-            controlBtn.setImage(TimerView.playIcon.withTintColor(UIColor(rgb: colors.pause), renderingMode: .alwaysOriginal), for: .normal)
-            timerImage.image = TimerView.breakImage
-            timerBgView.backgroundColor = UIColor(rgb: colors.pause)
-        }
+        timerBgView.backgroundColor = UIColor(rgb: rgb)
+        
+        controlBtn.setImage(TimerView.playIcon.withTintColor(color, renderingMode: .alwaysOriginal), for: .normal)
+        controlBtn.setTitleColor(color, for: .normal)
+        controlBtn.setTitle("", for: .normal)
+        
+        timerImage.image = type == .work ? TimerView.workImage : TimerView.breakImage
+        upNextImage.image = type == .work ? TimerView.breakImage : TimerView.workImage
     }
     
     func updateControlBtn(for state: TimerState, text: String, rgb: String) {
@@ -106,7 +86,7 @@ extension TimerView: TimerUIDelegate {
     }
     
     func hideUpNext() {
-        
+        upNextView.layer.opacity = 0
     }
     
     func updateTime(with time: Int) {

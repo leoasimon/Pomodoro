@@ -12,7 +12,7 @@ enum TimerState {
 }
 
 protocol TimerUIDelegate {
-    func showTimer(timer: CycleTimer, colors: CycleColors)
+    func showTimer(type: TimerType, duration: Int, rgb: String)
     
     func updateControlBtn(for state: TimerState, text: String, rgb: String)
     

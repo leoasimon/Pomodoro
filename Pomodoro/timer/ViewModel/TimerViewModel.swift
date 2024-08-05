@@ -45,7 +45,8 @@ final class TimerViewModel: NSObject {
         
         time = currentTimer.duration
         
-        uiUpdateDelegate.showTimer(timer: currentTimer, colors: cycle.colors)
+        uiUpdateDelegate.showTimer(type: currentTimer.type, duration: currentTimer.duration, rgb: cycle.colors.work)
+        uiUpdateDelegate.hideUpNext()
     }
     
     func clean() {
@@ -75,7 +76,6 @@ final class TimerViewModel: NSObject {
         
         timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
         
-        uiUpdateDelegate.showTimer(timer: currentTimer, colors: colors)
         
         switch currentTimer.type {
         case .work:
@@ -83,6 +83,7 @@ final class TimerViewModel: NSObject {
             let upNextColor = colors.pause
             let text = "Skip to the break"
             
+            uiUpdateDelegate.showTimer(type: .work, duration: currentTimer.duration, rgb: colors.work)
             uiUpdateDelegate.updateControlBtn(for: .running, text: text, rgb: color)
             uiUpdateDelegate.showUpNext(with: nextTimer, rgb: upNextColor)
         case .pause:
@@ -90,6 +91,7 @@ final class TimerViewModel: NSObject {
             let upNextColor = colors.work
             let text = "Skip to work"
             
+            uiUpdateDelegate.showTimer(type: .pause, duration: currentTimer.duration, rgb: colors.pause)
             uiUpdateDelegate.updateControlBtn(for: .running, text: text, rgb: color)
             uiUpdateDelegate.showUpNext(with: nextTimer, rgb: upNextColor)
         }
@@ -111,7 +113,8 @@ final class TimerViewModel: NSObject {
         time = currentTimer.duration
         
         uiUpdateDelegate.updateControlBtn(for: .idle, text: "", rgb: color)
-        uiUpdateDelegate.showTimer(timer: currentTimer, colors: colors)
+        uiUpdateDelegate.showTimer(type: currentTimer.type, duration: currentTimer.duration, rgb: color)
+        uiUpdateDelegate.hideUpNext()
     }
     
     func playTimerSound() {
