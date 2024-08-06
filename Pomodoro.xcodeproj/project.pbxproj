@@ -31,6 +31,7 @@
 		B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C65A832C401D5000B80B91 /* TimeFormatter.swift */; };
 		B3D4435F2C614EF200EAFD0E /* TimerUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4435E2C614EF200EAFD0E /* TimerUIDelegate.swift */; };
 		B3D443612C61689300EAFD0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D443602C61689300EAFD0E /* SoundPlayer.swift */; };
+		B3F9F2082C62E64300222AF3 /* TimerViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		B3C65A832C401D5000B80B91 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
 		B3D4435E2C614EF200EAFD0E /* TimerUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIDelegate.swift; sourceTree = "<group>"; };
 		B3D443602C61689300EAFD0E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 			children = (
 				B3B402012C32E3A600E5AA54 /* TimerViewController.swift */,
 				B3B402142C3306FB00E5AA54 /* TimerView.swift */,
+				B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionCellView.swift in Sources */,
 				B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */,
+				B3F9F2082C62E64300222AF3 /* TimerViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

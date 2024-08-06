@@ -30,6 +30,7 @@ class TimerView: UIView {
     //    https://www.hackingwithswift.com/example-code/language/when-is-it-safe-to-force-unwrap-optionals
     
     let viewModel = TimerViewModel()
+    var animationDelegate: TimerViewAnimationProtocol?
     
     @IBAction func toggleTimer(_ sender: Any) {
         viewModel.toggleTimer()
@@ -38,10 +39,9 @@ class TimerView: UIView {
     func configure(cycle: Cycle) {
         viewModel.configure(cycle: cycle, uiUpdateDelegate: self)
         
-        let skipToWorkTargetWidth = skipToWorkModelLabel.frame.width + 32
-        let skipToBreakTargetWidth = skipToBreakModelLabel.frame.width + 32
-        let playTargetWidth = controlBtn.frame.width
+        animationDelegate = TimerViewAnimationDelegate(for: self)
         
+//        TODO: Move this and the outlets to the delegate
         skipToBreakModelLabel.removeFromSuperview()
         skipToWorkModelLabel.removeFromSuperview()
         
@@ -49,20 +49,6 @@ class TimerView: UIView {
         controlBtn.titleLabel?.layer.opacity = 0
         controlBtn.titleLabel?.lineBreakMode = .byTruncatingTail
         controlBtn.translatesAutoresizingMaskIntoConstraints = false
-        
-        playConstraint = controlBtn.widthAnchor.constraint(equalToConstant: playTargetWidth)
-        skipToWorkConstraint = controlBtn.widthAnchor.constraint(equalToConstant: skipToWorkTargetWidth)
-        skipToBreakConstraint = controlBtn.widthAnchor.constraint(equalToConstant: skipToBreakTargetWidth)
-        playConstraint?.isActive = true
-        
-        guard let playConstraint = playConstraint else {
-            return
-        }
-        
-        NSLayoutConstraint.activate([
-            playConstraint,
-            controlBtn.heightAnchor.constraint(equalToConstant: controlBtn.frame.height)
-        ])
     }
     
     func getImage(for name: String) -> UIImage {
@@ -109,11 +95,7 @@ extension TimerView: TimerUIDelegate {
             controlBtn.setImage(TimerView.forwardIcon.withTintColor(color, renderingMode: .alwaysOriginal), for: .normal)
         }
         
-        if text == "" {
-            animateControlBtnCollapse()
-        } else {
-            animateControlBtnExpand(with: text)
-        }
+        self.animationDelegate?.animateControlBtn(with: text)
     }
     
     func animateControlBtnExpand(with text: String) {
