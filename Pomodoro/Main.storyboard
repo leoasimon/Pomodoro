@@ -91,14 +91,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hBM-KD-hXl">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95T-Af-ukU">
-                                        <rect key="frame" x="187" y="315.5" width="40" height="82.5"/>
-                                        <color key="tintColor" systemColor="labelColor"/>
+                                    <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="95T-Af-ukU">
+                                        <rect key="frame" x="183.5" y="351" width="47" height="47"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" cornerStyle="capsule" buttonSize="large">
+                                        <buttonConfiguration key="configuration" style="filled" image="play" catalog="system" imagePlacement="leading" imagePadding="0.0" cornerStyle="capsule" buttonSize="large">
                                             <backgroundConfiguration key="background">
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
                                         <connections>
                                             <action selector="toggleTimer:" destination="bpr-mZ-UCM" eventType="touchUpInside" id="wEI-Pj-2aV"/>
@@ -132,10 +135,37 @@
                                             <constraint firstItem="Z2H-fy-odS" firstAttribute="leading" secondItem="42Z-Hh-P5f" secondAttribute="leading" id="tS9-me-uUk"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2hs-jm-ZJ1">
+                                        <rect key="frame" x="10" y="338" width="138.5" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="forward.end" catalog="system" imagePlacement="leading" title="Skip to work" imagePadding="0.0" cornerStyle="capsule" buttonSize="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleAspectFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2Q-TO-ncN">
+                                        <rect key="frame" x="-4" y="253" width="168" height="47"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" image="forward.end" catalog="system" imagePlacement="leading" title="Skip to the break" imagePadding="0.0" cornerStyle="capsule" buttonSize="large">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemGray2Color"/>
                                 <constraints>
-                                    <constraint firstItem="95T-Af-ukU" firstAttribute="top" secondItem="42Z-Hh-P5f" secondAttribute="bottom" constant="38" id="4XK-Fv-jbp"/>
                                     <constraint firstItem="42Z-Hh-P5f" firstAttribute="centerY" secondItem="hBM-KD-hXl" secondAttribute="centerY" id="Ozf-dw-4N0"/>
                                     <constraint firstAttribute="bottom" secondItem="95T-Af-ukU" secondAttribute="bottom" constant="16" id="aFF-bp-fXz"/>
                                     <constraint firstItem="42Z-Hh-P5f" firstAttribute="centerX" secondItem="hBM-KD-hXl" secondAttribute="centerX" id="e3o-TL-Awi"/>
@@ -200,6 +230,8 @@
                         </constraints>
                         <connections>
                             <outlet property="controlBtn" destination="95T-Af-ukU" id="QEM-pb-axr"/>
+                            <outlet property="skipToBreakModelLabel" destination="v2Q-TO-ncN" id="EjY-b6-sCN"/>
+                            <outlet property="skipToWorkModelLabel" destination="2hs-jm-ZJ1" id="7a0-xQ-aCb"/>
                             <outlet property="timerBgView" destination="hBM-KD-hXl" id="el3-kG-Yf2"/>
                             <outlet property="timerImage" destination="Z2H-fy-odS" id="guG-J5-vnD"/>
                             <outlet property="timerLabel" destination="k9W-KQ-Ssn" id="m5K-uz-1op"/>
@@ -216,7 +248,9 @@
     </scenes>
     <resources>
         <image name="cup.and.saucer" catalog="system" width="128" height="91"/>
+        <image name="forward.end" catalog="system" width="128" height="120"/>
         <image name="laptopcomputer" catalog="system" width="128" height="73"/>
+        <image name="play" catalog="system" width="120" height="128"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
