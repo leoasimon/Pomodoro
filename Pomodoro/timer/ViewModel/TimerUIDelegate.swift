@@ -12,13 +12,9 @@ enum TimerState {
 }
 
 protocol TimerUIDelegate {
-    func showTimer(type: TimerType, duration: Int, rgb: String)
-    
-    func updateControlBtn(for state: TimerState, text: String, rgb: String)
-    
-    func showUpNext(with upNext: CycleTimer, rgb: String)
-    
-    func hideUpNext()
-    
-    func updateTime(with time: Int)
+    func startTimer(with timer: CycleTimer, nextTimer: CycleTimer, completion: @escaping (_ uiUpdated: Bool) -> Void)
+    func skipToNextTimer(with timer: CycleTimer, nextTimer: CycleTimer, at ellapsedTime: Float, completion: @escaping (_ uiUpdated: Bool) -> Void)
+    func displayTimer(with timer: CycleTimer)
+    func updateTime(with time: Int, maxTime: Int)
+    func updateControlBtn(for state: TimerState, type: TimerType)
 }
