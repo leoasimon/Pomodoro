@@ -2,18 +2,21 @@
 //  TimerViewModel.swift
 //  Pomodoro
 //
-//  Created by Leo on 2024-07-01.
+//  Created by Leo on 2024-08-09.
 //
 
-import AVFoundation
+import Foundation
 
-final class TimerViewModel: NSObject {
-    var uiUpdateDelegate: TimerUIDelegate?
-    var timers: [CycleTimer] = []
-    var colors: CycleColors?
+class TimerViewModel: NSObject {
+    var uiDelegate: TimerUIDelegate?
+    var cycle: Cycle?
     
-    var breakAudioPlayer: AVAudioPlayer?
-    var workAudioPlayer: AVAudioPlayer?
+    var timers: [CycleTimer] = []
+    
+    var time = 0
+    var timerIndex = 0
+    
+    var timer = Timer()
     
     var currentTimer: CycleTimer {
         return timers[timerIndex]
@@ -24,129 +27,128 @@ final class TimerViewModel: NSObject {
         return timers[i]
     }
     
-    var time = 0 {
-        didSet {
-            uiUpdateDelegate?.updateTime(with: time, maxTime: currentTimer.duration)
-        }
-    }
+    var isRunning: Bool = false
     
-    var timerIndex = 0
-    var timer = Timer()
-    
-    func configure(cycle: Cycle, uiUpdateDelegate: TimerUIDelegate) {
+    func configure(uiDelegate: TimerUIDelegate, cycle: Cycle) {
+        self.uiDelegate = uiDelegate
+        self.cycle = cycle
         self.timers = cycle.timers
-        self.colors = cycle.colors
-        self.uiUpdateDelegate = uiUpdateDelegate
+        self.time = currentTimer.duration
         
-        time = currentTimer.duration
+        self.uiDelegate?.hideUpNext()
+        self.uiDelegate?.updateTimer(with: currentTimer)
     }
     
-    func clean() {
-        if timer.isValid {
-            timer.invalidate()
-        }
-    }
-    
-    @objc func tick() {
-        time -= 1
-        
-        // Should skip to the next timer (without animation) and run it directly, playing a sound
-        if time == 0 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2, execute: {
-                [weak self] in
-                
-                self?.jumpToNextTimer()
-            })
-        }
-    }
-    
-    func toggleTimer() {
-        if (timer.isValid) {
+    func handleControlTouched() {
+        if isRunning {
             skipToNextTimer()
         } else {
             startTimer()
         }
     }
     
-    // Play timer init animation and then start it
     func startTimer() {
-        assert(uiUpdateDelegate != nil && colors != nil, "This viewModel is missing some important dependancies, did you forget to call it's configure method?")
-        guard let uiUpdateDelegate = uiUpdateDelegate else {
-            print("This viewModel is missing some important dependancies, did you forget to call it's configure method?")
+        guard let uiDelegate = uiDelegate else {
             return
         }
         
-        // 1 - Need some animation before actually starting the timer
-        uiUpdateDelegate.startTimer(with: currentTimer, nextTimer: nextTimer) {
-            [weak self] uiUpdated in
+        // 1 - Disable control button
+        uiDelegate.disableControlBtn()
+        
+        // 2 - prepare timer
+        uiDelegate.fillTimerProgressBar {
+            [weak self] in
             
-            // TODO: handle case where uiUpdated == false
             guard let self = self else { return }
             
-//            self.uiUpdateDelegate?.updateControlBtn(for: .running, type: self.currentTimer.type)
-            
-            // 2 - Start the timer loop
+            // 3 - start the timer
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+            self.isRunning = true
+            
+            // 4 - update the control btn
+            let text = self.nextTimer.type == .pause ? "Skip to the break" : "Skip to work"
+            uiDelegate.updateControlBtn(for: .running, with: text)
+            
+            // 5 - show up next
+            uiDelegate.showUpNext(with: self.nextTimer)
         }
     }
     
-    // Will skip directly to the next timer (Play animation)
-    // Next timer should be idle, not running
     func skipToNextTimer() {
-        assert(uiUpdateDelegate != nil && colors != nil, "This viewModel is missing some important dependancies, did you forget to call it's configure method?")
-        guard let uiUpdateDelegate = uiUpdateDelegate else {
-            print("This viewModel is missing some important dependancies, did you forget to call it's configure method?")
+        guard let uiDelegate = uiDelegate else {
             return
         }
         
-        timer.invalidate()
-        let ellapsedTime = Float(time) / Float(currentTimer.duration)
-        time = 0
+        // 1 - Disable control button
+        uiDelegate.disableControlBtn()
         
-        // TODO: handle case where UI update failed
-        // 1 - animate the skip
-        uiUpdateDelegate.skipToNextTimer(with: currentTimer, nextTimer: nextTimer, at: ellapsedTime) {
-            [weak self] uiUpdated in
+        let percentage = 1 - Float(time) / Float(currentTimer.duration)
+        
+        // 3 - cancel timer and update time
+        timer.invalidate()
+        isRunning = false
+        time = 0
+        uiDelegate.updateTime(with: self.time, maxTime: self.currentTimer.duration)
+        
+        // 4 - animate current timer progress to end
+        uiDelegate.skipTimerProgressBar(at: percentage) {
+            [weak self] in
             
             guard let self = self else { return }
-            // self.uiUpdateDelegate?.updateControlBtn(for: .idle, type: self.currentTimer.type)
+            // 5 - hide up next
+            uiDelegate.hideUpNext()
             
-            // 2 - prepare the new timer
+            // 6 - Update control btn
+            uiDelegate.updateControlBtn(for: .idle, with: "")
+            
+            // 1 - Update the timer
             self.timerIndex = self.timerIndex == self.timers.count - 1 ? 0 : self.timerIndex + 1
             self.time = self.currentTimer.duration
             
-            // 3 - display the new timer
-            self.uiUpdateDelegate?.displayTimer(with: self.currentTimer)
+            // 8 - Update timer UI
+            uiDelegate.updateTimer(with: self.currentTimer)
         }
     }
     
     func jumpToNextTimer() {
-        // 1 - Stop the timer and move to the next
+        // 1 - reset timer
         timer.invalidate()
         timerIndex = timerIndex == timers.count - 1 ? 0 : timerIndex + 1
+        time = currentTimer.duration
         
-        // play the sound
-        playTimerSound()
+        // 2 - Update timer ui
+        uiDelegate?.updateTimer(with: currentTimer)
+        uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
-        // 3 - show the new timer
-        uiUpdateDelegate?.displayTimer(with: currentTimer)
+        // TODO: 3 - Play sound
         
-        // 4 - wait for animation to be done
-        uiUpdateDelegate?.startTimer(with: currentTimer, nextTimer: nextTimer) { [weak self] uiUpdated in
-            guard let self = self else { return }
-            
-            // self.uiUpdateDelegate?.updateControlBtn(for: .running, type: self.currentTimer.type)
-            
-            // 5 - start the new timer
-            self.time = self.currentTimer.duration
-            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        // 4 - Start the timer
+        startTimer()
+    }
+    
+    func clean() {
+        timer.invalidate()
+    }
+    
+    func pauseTimer() {
+        timer.invalidate()
+    }
+    
+    func resumeTimer() {
+        if isRunning {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
         }
     }
     
-    func playTimerSound() {
-        let player = currentTimer.type == .work ? workAudioPlayer : breakAudioPlayer
+    @objc func tick() {
+        time -= 1
         
-        player?.prepareToPlay()
-        player?.play()
+        // Update time in UI
+        uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
+        
+        // Should skip to the next timer (without animation) and run it directly, playing a sound
+        if time == 0 {
+            jumpToNextTimer()
+        }
     }
 }

@@ -2,19 +2,22 @@
 //  TimerUIDelegate.swift
 //  Pomodoro
 //
-//  Created by Leo on 2024-08-05.
+//  Created by Leo on 2024-08-09.
 //
 
 import Foundation
 
-enum TimerState {
-    case idle, running
-}
-
 protocol TimerUIDelegate {
-    func startTimer(with timer: CycleTimer, nextTimer: CycleTimer, completion: @escaping (_ uiUpdated: Bool) -> Void)
-    func skipToNextTimer(with timer: CycleTimer, nextTimer: CycleTimer, at ellapsedTime: Float, completion: @escaping (_ uiUpdated: Bool) -> Void)
-    func displayTimer(with timer: CycleTimer)
+    func fillTimerProgressBar(completion: @escaping (() -> Void))
+    func skipTimerProgressBar(at percentage: Float, completion: @escaping (() -> Void))
+    
+    func updateTimer(with timer: CycleTimer)
+    
+    func hideUpNext()
+    func showUpNext(with timer: CycleTimer)
+    
+    func updateControlBtn(for state: TimerState, with text: String)
+    func disableControlBtn()
+    
     func updateTime(with time: Int, maxTime: Int)
-    func updateControlBtn(for state: TimerState, type: TimerType)
 }

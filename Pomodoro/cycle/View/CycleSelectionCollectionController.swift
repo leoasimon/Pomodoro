@@ -29,7 +29,7 @@ class CycleSelectionView: UIViewController {
 
 extension CycleSelectionView: CycleSelectionNavigationDelegate {
     func openCycle(with cycle: Cycle) {
-        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerControllerV2.identifier) as? TimerControllerV2 else {
+        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerViewController.identifier) as? TimerViewController else {
             print("Unable to instantiate timer view")
             return
         }

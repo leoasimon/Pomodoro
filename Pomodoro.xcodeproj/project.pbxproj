@@ -13,10 +13,10 @@
 		B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B341BD942C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift */; };
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
-		B34DA8452C65FD52008CF326 /* TimerControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */; };
-		B34DA8472C65FE03008CF326 /* TimerViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8462C65FE03008CF326 /* TimerViewV2.swift */; };
-		B34DA84B2C6613AE008CF326 /* TimerViewModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84A2C6613AE008CF326 /* TimerViewModelV2.swift */; };
-		B34DA84D2C661434008CF326 /* TimerUIDelegateV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84C2C661434008CF326 /* TimerUIDelegateV2.swift */; };
+		B34DA8452C65FD52008CF326 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8442C65FD52008CF326 /* TimerViewController.swift */; };
+		B34DA8472C65FE03008CF326 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8462C65FE03008CF326 /* TimerView.swift */; };
+		B34DA84B2C6613AE008CF326 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84A2C6613AE008CF326 /* TimerViewModel.swift */; };
+		B34DA84D2C661434008CF326 /* TimerUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84C2C661434008CF326 /* TimerUIDelegate.swift */; };
 		B353729E2C5D428E005A963F /* attribute.md in Resources */ = {isa = PBXBuildFile; fileRef = B353729D2C5D428E005A963F /* attribute.md */; };
 		B356F8152C471B8C00DD751F /* break.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8142C471B8C00DD751F /* break.wav */; };
 		B356F8172C471BE700DD751F /* work.wav in Resources */ = {isa = PBXBuildFile; fileRef = B356F8162C471BE700DD751F /* work.wav */; };
@@ -25,17 +25,12 @@
 		B3B30ED02C247AED0011056A /* Cycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B30ECF2C247AED0011056A /* Cycle.swift */; };
 		B3B401FE2C32E32700E5AA54 /* cycles.json in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FD2C32E32700E5AA54 /* cycles.json */; };
 		B3B402002C32E39300E5AA54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B3B401FF2C32E39200E5AA54 /* Main.storyboard */; };
-		B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402012C32E3A600E5AA54 /* TimerViewController.swift */; };
 		B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402032C32E3EE00E5AA54 /* Colors.swift */; };
 		B3B402082C32EFFC00E5AA54 /* CycleSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */; };
 		B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */; };
-		B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402122C33062400E5AA54 /* TimerViewModel.swift */; };
-		B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402142C3306FB00E5AA54 /* TimerView.swift */; };
 		B3B402182C331FA800E5AA54 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B402172C331FA800E5AA54 /* Timer.swift */; };
 		B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C65A832C401D5000B80B91 /* TimeFormatter.swift */; };
-		B3D4435F2C614EF200EAFD0E /* TimerUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4435E2C614EF200EAFD0E /* TimerUIDelegate.swift */; };
 		B3D443612C61689300EAFD0E /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D443602C61689300EAFD0E /* SoundPlayer.swift */; };
-		B3F9F2082C62E64300222AF3 /* TimerViewAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,10 +42,10 @@
 		B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControllerV2.swift; sourceTree = "<group>"; };
-		B34DA8462C65FE03008CF326 /* TimerViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewV2.swift; sourceTree = "<group>"; };
-		B34DA84A2C6613AE008CF326 /* TimerViewModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelV2.swift; sourceTree = "<group>"; };
-		B34DA84C2C661434008CF326 /* TimerUIDelegateV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIDelegateV2.swift; sourceTree = "<group>"; };
+		B34DA8442C65FD52008CF326 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		B34DA8462C65FE03008CF326 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		B34DA84A2C6613AE008CF326 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
+		B34DA84C2C661434008CF326 /* TimerUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIDelegate.swift; sourceTree = "<group>"; };
 		B353729D2C5D428E005A963F /* attribute.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = attribute.md; sourceTree = "<group>"; };
 		B356F8142C471B8C00DD751F /* break.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = break.wav; sourceTree = "<group>"; };
 		B356F8162C471BE700DD751F /* work.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = work.wav; sourceTree = "<group>"; };
@@ -59,17 +54,12 @@
 		B3B30ECF2C247AED0011056A /* Cycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cycle.swift; sourceTree = "<group>"; };
 		B3B401FD2C32E32700E5AA54 /* cycles.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = cycles.json; sourceTree = "<group>"; };
 		B3B401FF2C32E39200E5AA54 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		B3B402012C32E3A600E5AA54 /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		B3B402032C32E3EE00E5AA54 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		B3B402072C32EFFC00E5AA54 /* CycleSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleSelectionViewModel.swift; sourceTree = "<group>"; };
 		B3B402092C32F7B000E5AA54 /* CycleCardCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CycleCardCellViewModel.swift; sourceTree = "<group>"; };
-		B3B402122C33062400E5AA54 /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
-		B3B402142C3306FB00E5AA54 /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
 		B3B402172C331FA800E5AA54 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		B3C65A832C401D5000B80B91 /* TimeFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormatter.swift; sourceTree = "<group>"; };
-		B3D4435E2C614EF200EAFD0E /* TimerUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIDelegate.swift; sourceTree = "<group>"; };
 		B3D443602C61689300EAFD0E /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,11 +162,8 @@
 		B3B402102C3305FE00E5AA54 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */,
-				B34DA8462C65FE03008CF326 /* TimerViewV2.swift */,
-				B3B402012C32E3A600E5AA54 /* TimerViewController.swift */,
-				B3B402142C3306FB00E5AA54 /* TimerView.swift */,
-				B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */,
+				B34DA8442C65FD52008CF326 /* TimerViewController.swift */,
+				B34DA8462C65FE03008CF326 /* TimerView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -184,10 +171,8 @@
 		B3B402112C33060F00E5AA54 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				B3B402122C33062400E5AA54 /* TimerViewModel.swift */,
-				B3D4435E2C614EF200EAFD0E /* TimerUIDelegate.swift */,
-				B34DA84A2C6613AE008CF326 /* TimerViewModelV2.swift */,
-				B34DA84C2C661434008CF326 /* TimerUIDelegateV2.swift */,
+				B34DA84A2C6613AE008CF326 /* TimerViewModel.swift */,
+				B34DA84C2C661434008CF326 /* TimerUIDelegate.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -278,25 +263,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				B341BD952C1C7E4900BB3B6D /* CycleSelectionCollectionController.swift in Sources */,
-				B34DA84B2C6613AE008CF326 /* TimerViewModelV2.swift in Sources */,
-				B34DA8452C65FD52008CF326 /* TimerControllerV2.swift in Sources */,
+				B34DA84B2C6613AE008CF326 /* TimerViewModel.swift in Sources */,
+				B34DA8452C65FD52008CF326 /* TimerViewController.swift in Sources */,
 				B3B30ED02C247AED0011056A /* Cycle.swift in Sources */,
 				B3B402082C32EFFC00E5AA54 /* CycleSelectionViewModel.swift in Sources */,
 				B341BD912C1C7E4900BB3B6D /* AppDelegate.swift in Sources */,
 				B3B402182C331FA800E5AA54 /* Timer.swift in Sources */,
 				B3B402042C32E3EE00E5AA54 /* Colors.swift in Sources */,
-				B3D4435F2C614EF200EAFD0E /* TimerUIDelegate.swift in Sources */,
-				B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */,
-				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
-				B34DA8472C65FE03008CF326 /* TimerViewV2.swift in Sources */,
-				B34DA84D2C661434008CF326 /* TimerUIDelegateV2.swift in Sources */,
+				B34DA8472C65FE03008CF326 /* TimerView.swift in Sources */,
+				B34DA84D2C661434008CF326 /* TimerUIDelegate.swift in Sources */,
 				B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */,
 				B3D443612C61689300EAFD0E /* SoundPlayer.swift in Sources */,
 				B341BD932C1C7E4900BB3B6D /* SceneDelegate.swift in Sources */,
-				B3B402132C33062400E5AA54 /* TimerViewModel.swift in Sources */,
 				B3B30ECD2C2479510011056A /* CycleCardCollectionCellView.swift in Sources */,
 				B3B4020A2C32F7B000E5AA54 /* CycleCardCellViewModel.swift in Sources */,
-				B3F9F2082C62E64300222AF3 /* TimerViewAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
