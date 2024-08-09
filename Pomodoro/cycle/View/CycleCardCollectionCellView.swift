@@ -32,9 +32,13 @@ class CycleCardCollectionCellView: UICollectionViewCell {
         assert(viewModel.cycle != nil, "No cycle define in the viewModel, did you forget to call it's configure() method?")
         guard let cycle = viewModel.cycle else { return }
 
-        view.backgroundColor = UIColor(rgb: cycle.colors.work)
+        let workColor = UIColor(rgb: cycle.colors.work)
+        
+        view.backgroundColor = workColor
         nameLabel.text = cycle.name
-        selectBtn.titleLabel?.textColor = UIColor(rgb: cycle.colors.work)
+        
+        selectBtn.tintColor = workColor
+        
         workTimeLabel.text = TimeFormatter.secToTimeStr(for: cycle.timers[0].duration)
         pauseTimeLabel.text = TimeFormatter.secToTimeStr(for: cycle.timers[1].duration)
         layer.cornerRadius = 14
