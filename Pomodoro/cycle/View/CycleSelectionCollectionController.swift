@@ -15,7 +15,7 @@ class CycleSelectionView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.storyboard = storyboard
+        viewModel.navigationDelegate = self
         viewModel.navigationController = navigationController
         let cycleCardCellNib = CycleCardCollectionCellView.nib()
         
@@ -25,8 +25,23 @@ class CycleSelectionView: UIViewController {
         
         title = "Select your cycle"
         navigationController?.navigationBar.prefersLargeTitles = true
-        
         viewModel.loadCycles()
+    }
+}
+
+extension CycleSelectionView: CycleSelectionNavigationDelegate {
+    func openCycle(with cycle: Cycle) {
+        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerControllerV2.identifier) as? TimerControllerV2 else {
+            print("Unable to instantiate timer view")
+            return
+        }
+        
+        timerView.configure(with: cycle)
+        navigationController?.pushViewController(timerView, animated: true)
+    }
+    
+    @objc func closeTimer() {
+        print("Should close the timer now")
     }
 }
 

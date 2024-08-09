@@ -27,9 +27,7 @@ class TimerViewModelV2: NSObject {
         return timers[i]
     }
     
-    var isRunning: Bool {
-        return timer.isValid
-    }
+    var isRunning: Bool = false
     
     func configure(uiDelegate: TimerUIDelegateV2, cycle: Cycle) {
         self.uiDelegate = uiDelegate
@@ -65,11 +63,11 @@ class TimerViewModelV2: NSObject {
             
             // 3 - start the timer
             self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+            self.isRunning = true
             
             // 4 - update the control btn
-            let timerState: TimerState = self.isRunning ? .running : .idle
             let text = self.nextTimer.type == .pause ? "Skip to the break" : "Skip to work"
-            uiDelegate.updateControlBtn(for: timerState, with: text)
+            uiDelegate.updateControlBtn(for: .running, with: text)
             
             // 5 - show up next
             uiDelegate.showUpNext(with: self.nextTimer)
@@ -88,6 +86,7 @@ class TimerViewModelV2: NSObject {
         
         // 3 - cancel timer and update time
         timer.invalidate()
+        isRunning = false
         time = 0
         uiDelegate.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
@@ -129,6 +128,16 @@ class TimerViewModelV2: NSObject {
     
     func clean() {
         timer.invalidate()
+    }
+    
+    func pauseTimer() {
+        timer.invalidate()
+    }
+    
+    func resumeTimer() {
+        if isRunning {
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.tick), userInfo: nil, repeats: true)
+        }
     }
     
     @objc func tick() {

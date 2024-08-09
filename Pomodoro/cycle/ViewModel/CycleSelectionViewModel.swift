@@ -5,12 +5,13 @@
 //  Created by Leo on 2024-07-01.
 //
 
+// TODO: Viewmodel shouldn't be dependant of UIKit
 import UIKit
 
 final class CycleSelectionViewModel: NSObject {
     var cycles: [Cycle] = []
-    var storyboard: UIStoryboard?
     var navigationController: UINavigationController?
+    var navigationDelegate: CycleSelectionNavigationDelegate?
     
     func loadCycles() {
         guard let cyclesFileUrl = Bundle.main.url(forResource: "cycles", withExtension: "json") else {
@@ -26,7 +27,7 @@ final class CycleSelectionViewModel: NSObject {
         let decoder = JSONDecoder()
         guard let jsonCycles = try? decoder.decode([Cycle].self, from: cyclesContent) else {
             print("Unable to parse the cycle configuration file")
-            //            TODO: Show a dialog to the user
+            // TODO: Show a dialog to the user
             return
         }
         
@@ -47,13 +48,7 @@ extension CycleSelectionViewModel: CycleCellActionsDelegate {
     }
     
     func openCycleTimer(cycle: Cycle) {
-        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerControllerV2.identifier) as? TimerControllerV2 else {
-            print("Unable to instantiate timer view")
-            return
-        }
-        
-        timerView.configure(with: cycle)
-        navigationController?.pushViewController(timerView, animated: true)
+        navigationDelegate?.openCycle(with: cycle)
     }
 }
 
@@ -85,4 +80,8 @@ extension CycleSelectionViewModel: UICollectionViewDelegateFlowLayout {
         
         return CGSize(width: availableWidth - (padding * 2.0), height: 213)
     }
+}
+
+protocol CycleSelectionNavigationDelegate {
+    func openCycle(with cycle: Cycle)
 }
