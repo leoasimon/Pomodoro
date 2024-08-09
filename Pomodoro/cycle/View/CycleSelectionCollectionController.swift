@@ -23,8 +23,6 @@ class CycleSelectionView: UIViewController {
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
         
-        title = "Select your cycle"
-        navigationController?.navigationBar.prefersLargeTitles = true
         viewModel.loadCycles()
     }
 }
