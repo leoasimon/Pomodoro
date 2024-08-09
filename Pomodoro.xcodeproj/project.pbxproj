@@ -14,7 +14,7 @@
 		B341BD9A2C1C7E4A00BB3B6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B341BD992C1C7E4A00BB3B6D /* Assets.xcassets */; };
 		B341BD9D2C1C7E4A00BB3B6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B341BD9B2C1C7E4A00BB3B6D /* LaunchScreen.storyboard */; };
 		B34DA8452C65FD52008CF326 /* TimerControllerV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */; };
-		B34DA8472C65FE03008CF326 /* TimerV2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8462C65FE03008CF326 /* TimerV2View.swift */; };
+		B34DA8472C65FE03008CF326 /* TimerViewV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA8462C65FE03008CF326 /* TimerViewV2.swift */; };
 		B34DA84B2C6613AE008CF326 /* TimerViewModelV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84A2C6613AE008CF326 /* TimerViewModelV2.swift */; };
 		B34DA84D2C661434008CF326 /* TimerUIDelegateV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34DA84C2C661434008CF326 /* TimerUIDelegateV2.swift */; };
 		B353729E2C5D428E005A963F /* attribute.md in Resources */ = {isa = PBXBuildFile; fileRef = B353729D2C5D428E005A963F /* attribute.md */; };
@@ -48,7 +48,7 @@
 		B341BD9C2C1C7E4A00BB3B6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B341BD9E2C1C7E4A00BB3B6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerControllerV2.swift; sourceTree = "<group>"; };
-		B34DA8462C65FE03008CF326 /* TimerV2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerV2View.swift; sourceTree = "<group>"; };
+		B34DA8462C65FE03008CF326 /* TimerViewV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewV2.swift; sourceTree = "<group>"; };
 		B34DA84A2C6613AE008CF326 /* TimerViewModelV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModelV2.swift; sourceTree = "<group>"; };
 		B34DA84C2C661434008CF326 /* TimerUIDelegateV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIDelegateV2.swift; sourceTree = "<group>"; };
 		B353729D2C5D428E005A963F /* attribute.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = attribute.md; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				B34DA8442C65FD52008CF326 /* TimerControllerV2.swift */,
-				B34DA8462C65FE03008CF326 /* TimerV2View.swift */,
+				B34DA8462C65FE03008CF326 /* TimerViewV2.swift */,
 				B3B402012C32E3A600E5AA54 /* TimerViewController.swift */,
 				B3B402142C3306FB00E5AA54 /* TimerView.swift */,
 				B3F9F2072C62E64300222AF3 /* TimerViewAnimation.swift */,
@@ -288,7 +288,7 @@
 				B3D4435F2C614EF200EAFD0E /* TimerUIDelegate.swift in Sources */,
 				B3B402152C3306FB00E5AA54 /* TimerView.swift in Sources */,
 				B3B402022C32E3A600E5AA54 /* TimerViewController.swift in Sources */,
-				B34DA8472C65FE03008CF326 /* TimerV2View.swift in Sources */,
+				B34DA8472C65FE03008CF326 /* TimerViewV2.swift in Sources */,
 				B34DA84D2C661434008CF326 /* TimerUIDelegateV2.swift in Sources */,
 				B3C65A842C401D5000B80B91 /* TimeFormatter.swift in Sources */,
 				B3D443612C61689300EAFD0E /* SoundPlayer.swift in Sources */,

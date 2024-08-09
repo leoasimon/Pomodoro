@@ -17,7 +17,7 @@ class TimerControllerV2: UIViewController {
 
         loadCycles()
         
-        guard let view = view as? TimerV2View else { return }
+        guard let view = view as? TimerViewV2 else { return }
         guard let cycle = cycles.first else  { return }
         
         view.configure(colors: cycle.colors)

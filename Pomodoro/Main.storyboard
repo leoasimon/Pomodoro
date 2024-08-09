@@ -249,7 +249,7 @@
         <scene sceneID="ocC-YP-Ffx">
             <objects>
                 <viewController id="laZ-9d-Fki" customClass="TimerControllerV2" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="WIO-Lx-KoW" customClass="TimerV2View" customModule="Pomodoro" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="WIO-Lx-KoW" customClass="TimerViewV2" customModule="Pomodoro" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -305,10 +305,18 @@
                                     <constraint firstItem="axa-36-B1m" firstAttribute="centerY" secondItem="h2r-ly-X90" secondAttribute="centerY" id="kSt-ME-IwM"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:25:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWR-11-B70">
+                                <rect key="frame" x="172" y="406" width="70.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="98p-67-ucR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="cWR-11-B70" firstAttribute="top" secondItem="Vbg-Di-Po2" secondAttribute="bottom" id="3ex-aP-Iby"/>
+                            <constraint firstItem="cWR-11-B70" firstAttribute="centerX" secondItem="Vbg-Di-Po2" secondAttribute="centerX" id="453-IN-WwT"/>
                             <constraint firstItem="Vbg-Di-Po2" firstAttribute="centerX" secondItem="98p-67-ucR" secondAttribute="centerX" id="6os-rZ-tjS"/>
                             <constraint firstItem="D5N-Zu-ABl" firstAttribute="centerX" secondItem="98p-67-ucR" secondAttribute="centerX" id="CsH-6d-5hc"/>
                             <constraint firstItem="D5N-Zu-ABl" firstAttribute="top" secondItem="418-9Q-u41" secondAttribute="bottom" constant="120" id="Cx8-JP-psf"/>
@@ -318,6 +326,8 @@
                             <constraint firstItem="Vbg-Di-Po2" firstAttribute="top" secondItem="98p-67-ucR" secondAttribute="top" constant="230" id="xNT-Xs-mtS"/>
                         </constraints>
                         <connections>
+                            <outlet property="controlBtn" destination="D5N-Zu-ABl" id="aYQ-Cm-CmR"/>
+                            <outlet property="timeLabel" destination="cWR-11-B70" id="xYK-1A-hsg"/>
                             <outlet property="timerImageView" destination="Vbg-Di-Po2" id="mhb-by-NSJ"/>
                             <outlet property="upNextImage" destination="h2r-ly-X90" id="xQ1-m4-mWg"/>
                             <outlet property="upNextLabel" destination="axa-36-B1m" id="pqu-5A-hvN"/>

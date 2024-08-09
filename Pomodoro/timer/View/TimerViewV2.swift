@@ -7,12 +7,16 @@
 
 import UIKit
 
-class TimerV2View: UIView, TimerUIDelegateV2 {
+class TimerViewV2: UIView, TimerUIDelegateV2 {
     @IBOutlet weak var timerImageView: UIImageView!
     
     @IBOutlet weak var upNextLabel: UILabel!
     @IBOutlet weak var upNextImage: UIImageView!
     @IBOutlet weak var upNextView: UIView!
+    
+    @IBOutlet weak var controlBtn: UIButton!
+    
+    @IBOutlet weak var timeLabel: UILabel!
     
     var colors = ["work": UIColor.blue, "pause": UIColor.orange]
     
@@ -40,6 +44,13 @@ class TimerV2View: UIView, TimerUIDelegateV2 {
     func updateTimer(with timer: CycleTimer) {
         self.backgroundColor = timer.type == .work ? colors["work"] : colors["pause"]
         timerImageView.image = timer.type == .work ? TimerView.workImage : TimerView.breakImage
+    }
+    
+    func updateControlBtn(for state: TimerState, with text: String) {
+        let image = state == .idle ? TimerView.playIcon : TimerView.forwardIcon
+        
+        self.controlBtn.setImage(image, for: .normal)
+        self.controlBtn.setTitle(text, for: .normal)
     }
     
     
@@ -91,6 +102,14 @@ class TimerV2View: UIView, TimerUIDelegateV2 {
         }
     }
     
+    func skipTimerProgressBar(completion: @escaping (() -> Void)) {
+        timerProgress.add(skipTimerAnimation, forKey: "init-timer")
+        DispatchQueue.main.asyncAfter(deadline: .now() + timerAnimationDuration - 0.1) { [weak self] in
+            self?.timerProgress.strokeStart = 1
+            completion()
+        }
+    }
+    
     func showUpNext(with timer: CycleTimer) {
         upNextView.layer.opacity = 1
         upNextImage.image = timer.type == .pause ? TimerView.breakImage : TimerView.workImage
@@ -101,5 +120,9 @@ class TimerV2View: UIView, TimerUIDelegateV2 {
     
     func hideUpNext() {
         upNextView.layer.opacity = 0
+    }
+    
+    func updateTime(with time: String) {
+        timeLabel.text = time
     }
 }
