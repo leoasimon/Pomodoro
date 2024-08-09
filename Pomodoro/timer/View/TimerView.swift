@@ -213,7 +213,6 @@ extension TimerView: TimerUIDelegate {
         timerProgress.strokeStart = 1
         timerProgress.strokeEnd = 1
         
-        // changeBtnColor(with: color)
         updateUpNext(for: timer.type)
     }
     
