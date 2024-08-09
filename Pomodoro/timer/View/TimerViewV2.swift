@@ -8,6 +8,7 @@
 import UIKit
 
 class TimerViewV2: UIView, TimerUIDelegateV2 {
+    
     @IBOutlet weak var timerImageView: UIImageView!
     
     @IBOutlet weak var upNextLabel: UILabel!
@@ -27,6 +28,8 @@ class TimerViewV2: UIView, TimerUIDelegateV2 {
     let initTimerAnimation = CABasicAnimation(keyPath: "strokeStart")
     let skipTimerAnimation = CABasicAnimation(keyPath: "strokeStart")
     
+    var buttonColor = UIColor()
+    
     override func layoutSubviews() {
         layer.addSublayer(timerProgressPlaceholder)
         layer.addSublayer(timerProgress)
@@ -42,17 +45,62 @@ class TimerViewV2: UIView, TimerUIDelegateV2 {
     }
     
     func updateTimer(with timer: CycleTimer) {
-        self.backgroundColor = timer.type == .work ? colors["work"] : colors["pause"]
+        backgroundColor = timer.type == .work ? colors["work"] : colors["pause"]
         timerImageView.image = timer.type == .work ? TimerView.workImage : TimerView.breakImage
+        timeLabel.text = TimeFormatter.secToTimeStr(for: timer.duration)
+        buttonColor = backgroundColor ?? .black
+        
+        controlBtn.setTitleColor(backgroundColor, for: .normal)
+        controlBtn.setTitleColor(backgroundColor, for: .highlighted)
+        updateControlBtn(for: .idle, with: "")
     }
     
     func updateControlBtn(for state: TimerState, with text: String) {
-        let image = state == .idle ? TimerView.playIcon : TimerView.forwardIcon
+        let baseImage = state == .idle ? TimerView.playIcon : TimerView.forwardIcon
+        let image = baseImage.withTintColor(buttonColor, renderingMode: .alwaysOriginal)
         
         self.controlBtn.setImage(image, for: .normal)
         self.controlBtn.setTitle(text, for: .normal)
+        self.controlBtn.isEnabled = true
     }
     
+    func fillTimerProgressBar(completion: @escaping (() -> Void)) {
+        timerProgress.add(initTimerAnimation, forKey: "init-timer")
+        DispatchQueue.main.asyncAfter(deadline: .now() + timerAnimationDuration - 0.1) { [weak self] in
+            self?.timerProgress.strokeStart = 0
+            completion()
+        }
+    }
+    
+    func skipTimerProgressBar(at percentage: Float, completion: @escaping (() -> Void)) {
+        skipTimerAnimation.fromValue = percentage
+        timerProgress.add(skipTimerAnimation, forKey: "init-timer")
+        DispatchQueue.main.asyncAfter(deadline: .now() + timerAnimationDuration - 0.1) { [weak self] in
+            self?.timerProgress.strokeStart = 1
+            completion()
+        }
+    }
+    
+    func showUpNext(with timer: CycleTimer) {
+        upNextView.layer.opacity = 1
+        upNextImage.image = timer.type == .pause ? TimerView.breakImage : TimerView.workImage
+        
+        upNextImage.image = timer.type == .pause ? TimerView.breakImage : TimerView.workImage
+        upNextLabel.text = "\(timer.name): \(TimeFormatter.secToTimeStr(for: timer.duration))"
+    }
+    
+    func hideUpNext() {
+        upNextView.layer.opacity = 0
+    }
+    
+    func updateTime(with time: Int, maxTime: Int) {
+        timeLabel.text = TimeFormatter.secToTimeStr(for: time)
+        timerProgress.strokeStart = 1 - CGFloat(time) / CGFloat(maxTime)
+    }
+    
+    func disableControlBtn() {
+        controlBtn.isEnabled = false
+    }
     
     private func buildTimerProgress() {
         let radius = CGFloat(120)
@@ -92,37 +140,5 @@ class TimerViewV2: UIView, TimerUIDelegateV2 {
         skipTimerAnimation.toValue = 1.0
         skipTimerAnimation.isRemovedOnCompletion = false
         skipTimerAnimation.duration = timeInterval
-    }
-    
-    func fillTimerProgressBar(completion: @escaping (() -> Void)) {
-        timerProgress.add(initTimerAnimation, forKey: "init-timer")
-        DispatchQueue.main.asyncAfter(deadline: .now() + timerAnimationDuration - 0.1) { [weak self] in
-            self?.timerProgress.strokeStart = 0
-            completion()
-        }
-    }
-    
-    func skipTimerProgressBar(completion: @escaping (() -> Void)) {
-        timerProgress.add(skipTimerAnimation, forKey: "init-timer")
-        DispatchQueue.main.asyncAfter(deadline: .now() + timerAnimationDuration - 0.1) { [weak self] in
-            self?.timerProgress.strokeStart = 1
-            completion()
-        }
-    }
-    
-    func showUpNext(with timer: CycleTimer) {
-        upNextView.layer.opacity = 1
-        upNextImage.image = timer.type == .pause ? TimerView.breakImage : TimerView.workImage
-        
-        upNextImage.image = timer.type == .pause ? TimerView.breakImage : TimerView.workImage
-        upNextLabel.text = "\(timer.name): \(TimeFormatter.secToTimeStr(for: timer.duration))"
-    }
-    
-    func hideUpNext() {
-        upNextView.layer.opacity = 0
-    }
-    
-    func updateTime(with time: String) {
-        timeLabel.text = time
     }
 }

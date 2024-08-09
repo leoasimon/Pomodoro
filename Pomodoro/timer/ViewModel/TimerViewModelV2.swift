@@ -39,7 +39,6 @@ class TimerViewModelV2: NSObject {
         
         self.uiDelegate?.hideUpNext()
         self.uiDelegate?.updateTimer(with: currentTimer)
-        self.uiDelegate?.updateTime(with: TimeFormatter.secToTimeStr(for: self.time))
     }
     
     func handleControlTouched() {
@@ -55,7 +54,8 @@ class TimerViewModelV2: NSObject {
             return
         }
         
-        // TODO: 1 - Disable control button
+        // 1 - Disable control button
+        uiDelegate.disableControlBtn()
         
         // 2 - prepare timer
         uiDelegate.fillTimerProgressBar {
@@ -82,30 +82,33 @@ class TimerViewModelV2: NSObject {
             return
         }
         
-        // TODO: 1 - Disable control button
+        // 1 - Disable control button
+        uiDelegate.disableControlBtn()
 
+        let percentage = 1 - Float(time) / Float(currentTimer.duration)
+        
         // 3 - cancel timer and update time
         timer.invalidate()
         time = 0
         
-        // TODO: 4 - animate current timer progress to end
-        uiDelegate.skipTimerProgressBar {
+        // 4 - animate current timer progress to end
+        uiDelegate.skipTimerProgressBar(at: percentage) {
             [weak self] in
             
             guard let self = self else { return }
-            // 4 - hide up next
+            // 5 - hide up next
             uiDelegate.hideUpNext()
             
-            // 5 - Update control btn
+            // 6 - Update control btn
             uiDelegate.updateControlBtn(for: .idle, with: "")
             
-            // 6 - Update the timer
+            // 1 - Update the timer
             self.timerIndex = self.timerIndex == self.timers.count - 1 ? 0 : self.timerIndex + 1
             self.time = self.currentTimer.duration
             
-            // 7 - Update timer UI
+            // 8 - Update timer UI
             uiDelegate.updateTimer(with: self.currentTimer)
-            uiDelegate.updateTime(with: TimeFormatter.secToTimeStr(for: self.time))
+            uiDelegate.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         }
     }
     
@@ -117,7 +120,7 @@ class TimerViewModelV2: NSObject {
         
         // 2 - Update timer ui
         uiDelegate?.updateTimer(with: currentTimer)
-        uiDelegate?.updateTime(with: TimeFormatter.secToTimeStr(for: time))
+        uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
         // TODO: 3 - Play sound
         
@@ -130,7 +133,7 @@ class TimerViewModelV2: NSObject {
         
         print("tick")
         // Update time in UI
-        uiDelegate?.updateTime(with: TimeFormatter.secToTimeStr(for: time))
+        uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
         // Should skip to the next timer (without animation) and run it directly, playing a sound
         if time == 0 {
