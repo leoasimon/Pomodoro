@@ -47,7 +47,7 @@ extension CycleSelectionViewModel: CycleCellActionsDelegate {
     }
     
     func openCycleTimer(cycle: Cycle) {
-        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerViewController.identifier) as? TimerViewController else {
+        guard let timerView = storyboard?.instantiateViewController(withIdentifier: TimerControllerV2.identifier) as? TimerControllerV2 else {
             print("Unable to instantiate timer view")
             return
         }

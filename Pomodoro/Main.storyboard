@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="laZ-9d-Fki">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d4I-jf-ugf">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -248,7 +248,7 @@
         <!--Timer ControllerV2-->
         <scene sceneID="ocC-YP-Ffx">
             <objects>
-                <viewController id="laZ-9d-Fki" customClass="TimerControllerV2" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TimerViewControllerV2" id="laZ-9d-Fki" customClass="TimerControllerV2" customModule="Pomodoro" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WIO-Lx-KoW" customClass="TimerViewV2" customModule="Pomodoro" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,7 +334,7 @@
                             <constraint firstItem="98p-67-ucR" firstAttribute="bottom" secondItem="D5N-Zu-ABl" secondAttribute="bottom" constant="33" id="ebm-b5-DYO"/>
                             <constraint firstItem="98p-67-ucR" firstAttribute="trailing" secondItem="418-9Q-u41" secondAttribute="trailing" constant="32" id="iUK-ry-wFs"/>
                             <constraint firstItem="418-9Q-u41" firstAttribute="leading" secondItem="98p-67-ucR" secondAttribute="leading" constant="32" id="ntE-uK-wOa"/>
-                            <constraint firstItem="Vbg-Di-Po2" firstAttribute="top" secondItem="98p-67-ucR" secondAttribute="top" constant="230" id="xNT-Xs-mtS"/>
+                            <constraint firstItem="Vbg-Di-Po2" firstAttribute="top" secondItem="WIO-Lx-KoW" secondAttribute="top" constant="274" id="xNT-Xs-mtS"/>
                         </constraints>
                         <connections>
                             <outlet property="controlBtn" destination="D5N-Zu-ABl" id="aYQ-Cm-CmR"/>

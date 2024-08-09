@@ -8,23 +8,25 @@
 import UIKit
 
 class TimerControllerV2: UIViewController {
-
+    
     var cycles = [Cycle]()
     let timerViewModel = TimerViewModelV2()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        loadCycles()
-        
+    static let identifier = "TimerViewControllerV2"
+    
+    func configure(with cycle: Cycle) {
         guard let view = view as? TimerViewV2 else { return }
-        guard let cycle = cycles.first else  { return }
         
         view.configure(colors: cycle.colors)
         timerViewModel.configure(uiDelegate: view, cycle: cycle)
-        
-        guard let firstTimer = cycle.timers.first else { return }
-        view.updateTimer(with: firstTimer)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        timerViewModel.clean()
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
     }
     
     func loadCycles() {

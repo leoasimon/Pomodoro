@@ -30,7 +30,7 @@ class TimerViewModelV2: NSObject {
     var isRunning: Bool {
         return timer.isValid
     }
-
+    
     func configure(uiDelegate: TimerUIDelegateV2, cycle: Cycle) {
         self.uiDelegate = uiDelegate
         self.cycle = cycle
@@ -60,7 +60,6 @@ class TimerViewModelV2: NSObject {
         // 2 - prepare timer
         uiDelegate.fillTimerProgressBar {
             [weak self] in
-            print("Timer is ready to start!")
             
             guard let self = self else { return }
             
@@ -84,12 +83,13 @@ class TimerViewModelV2: NSObject {
         
         // 1 - Disable control button
         uiDelegate.disableControlBtn()
-
+        
         let percentage = 1 - Float(time) / Float(currentTimer.duration)
         
         // 3 - cancel timer and update time
         timer.invalidate()
         time = 0
+        uiDelegate.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
         // 4 - animate current timer progress to end
         uiDelegate.skipTimerProgressBar(at: percentage) {
@@ -108,7 +108,6 @@ class TimerViewModelV2: NSObject {
             
             // 8 - Update timer UI
             uiDelegate.updateTimer(with: self.currentTimer)
-            uiDelegate.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         }
     }
     
@@ -128,10 +127,13 @@ class TimerViewModelV2: NSObject {
         startTimer()
     }
     
+    func clean() {
+        timer.invalidate()
+    }
+    
     @objc func tick() {
         time -= 1
         
-        print("tick")
         // Update time in UI
         uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         

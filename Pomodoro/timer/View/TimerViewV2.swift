@@ -104,7 +104,10 @@ class TimerViewV2: UIView, TimerUIDelegateV2 {
     
     private func buildTimerProgress() {
         let radius = CGFloat(120)
-        let center = CGPoint(x: timerImageView.frame.midX, y: timerImageView.frame.midY)
+        let y = timerImageView.layer.frame.midY
+        let x = timerImageView.layer.frame.midX
+        
+        let center = CGPoint(x: x, y: y)
         let circlePath = UIBezierPath(arcCenter: center, radius: radius, startAngle: -CGFloat(Double.pi / 2), endAngle: CGFloat(Double.pi * 1.5), clockwise: true)
         
         timerProgress.path = circlePath.cgPath
