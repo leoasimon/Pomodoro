@@ -1,5 +1,18 @@
 [
-   {
+    {
+        "name": "Test",
+        "colors": {
+            "work": "eac9af",
+            "pause": "eaafb3"
+        },
+        "timers": [
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 3, "name": "Small break"},
+            {"type": "work","duration": 5, "name": "Work"}, {"type": "pause", "duration": 10, "name": "Long break"}
+        ]
+    },
+    {
         "name": "Classic Pomodoro",
         "colors": {
             "work": "FF6347",
