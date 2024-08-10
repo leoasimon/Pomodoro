@@ -8,10 +8,9 @@
 import UIKit
 
 class TimerViewController: UIViewController {
-    var cycles = [Cycle]()
     let timerViewModel = TimerViewModel()
     
-    static let identifier = "TimerViewControllerV2"
+    static let identifier = "TimerViewController"
     
     func configure(with cycle: Cycle) {
         guard let view = view as? TimerView else { return }
@@ -31,27 +30,6 @@ class TimerViewController: UIViewController {
         // TODO: Make this button bigger
         let closeBtn = UIBarButtonItem(image: UIImage(systemName: "xmark.circle")?.withTintColor(.white, renderingMode: .alwaysOriginal), style: .plain, target: self, action: #selector(quitCycle))
         navigationItem.leftBarButtonItem = closeBtn
-    }
-    
-    func loadCycles() {
-        guard let cyclesFileUrl = Bundle.main.url(forResource: "cycles", withExtension: "json") else {
-            print("Unable to locate the cycles file")
-            return
-        }
-        
-        guard let cyclesContent = try? Data(contentsOf: cyclesFileUrl) else {
-            print("Unable to read the content for the cycles file")
-            return
-        }
-        
-        let decoder = JSONDecoder()
-        guard let jsonCycles = try? decoder.decode([Cycle].self, from: cyclesContent) else {
-            print("Unable to parse the cycle configuration file")
-            // TODO: Show a dialog to the user
-            return
-        }
-        
-        cycles = jsonCycles
     }
     
     @IBAction func handleTimerBtn(_ sender: Any) {

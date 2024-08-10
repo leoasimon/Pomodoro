@@ -43,6 +43,7 @@ protocol CycleCellActionsDelegate {
 
 extension CycleSelectionViewModel: CycleCellActionsDelegate {
     
+    // TODO: Create the info dialogs
     func openCycleInfos(cycle: Cycle) {
         print("Should open cycle info for \(cycle.name)")
     }

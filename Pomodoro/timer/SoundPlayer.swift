@@ -8,7 +8,6 @@
 import Foundation
 import AVFoundation
 
-// TODO: test (no earbuds and no private space so far)
 final class SoundPlayer {
     static private let breakSoundUrl = Bundle.main.url(forResource: "break", withExtension: "wav")!
 

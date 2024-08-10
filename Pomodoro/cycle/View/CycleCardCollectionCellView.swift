@@ -42,6 +42,7 @@ class CycleCardCollectionCellView: UICollectionViewCell {
         workTimeLabel.text = TimeFormatter.secToTimeStr(for: cycle.timers[0].duration)
         pauseTimeLabel.text = TimeFormatter.secToTimeStr(for: cycle.timers[1].duration)
         layer.cornerRadius = 14
+        
     }
     
     static func nib() -> UINib {
