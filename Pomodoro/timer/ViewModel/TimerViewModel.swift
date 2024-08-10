@@ -120,7 +120,12 @@ class TimerViewModel: NSObject {
         uiDelegate?.updateTimer(with: currentTimer)
         uiDelegate?.updateTime(with: self.time, maxTime: self.currentTimer.duration)
         
-        // TODO: 3 - Play sound
+        // 3 - Play sound
+        if (currentTimer.type == .pause) {
+            SoundPlayer.playWorkSound()
+        } else {
+            SoundPlayer.playBreakSound()
+        }
         
         // 4 - Start the timer
         startTimer()
