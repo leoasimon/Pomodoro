@@ -1,4 +1,4 @@
-# Pommodoro
+# IOS Pomodoro
 A minimal Pomodoro App for IOS
 ![Pomodoro presentation image](presentation/presentation.png)
 
